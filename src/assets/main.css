@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+}
+
+.glass-hover {
+  @apply transition-all duration-300;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 20px 40px -24px rgba(15, 23, 42, 0.35);
+  transform: translateY(-2px);
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-medium uppercase tracking-wide;
+}
+
+.card-divider {
+  @apply h-px w-full bg-slate-200/60;
+}
+
+.tab-btn,
+.filter-btn {
+  transition: all 0.3s ease;
+  will-change: transform, background-color, box-shadow;
+}
+
+.tab-btn.active,
+.filter-btn.active {
+  transform: scale(1.05);
+}
+
+.form-input {
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -20px rgba(79, 70, 229, 0.6);
+}
+
+.team-card,
+.contact-card,
+.value-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.team-card:hover,
+.contact-card:hover,
+.value-card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+.contact-icon,
+.value-icon {
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon,
+.value-card:hover .value-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.case-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.case-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+.case-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.map-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  );
+  animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}

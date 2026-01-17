@@ -1,0 +1,299 @@
+<html lang="zh-CN" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例详情 - 华泰集团官网</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b', 
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for light theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Subtle grid background - Darkened for light mode visibility */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="24" data-height="24"></span>
+                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚科技</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-normal text-slate-500">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors duration-200">首页</a>
+                <a href="services.html" class="hover:text-indigo-600 transition-colors duration-200">服务</a>
+                <a href="portfolio.html" class="text-indigo-600 font-medium">案例</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors duration-200">关于</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors duration-200">联系</a>
+            </div>
+
+            <a href="tel:400-123-4567" class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
+                <span>立即咨询</span>
+                <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-slate-500 hover:text-slate-800">
+                <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-[800px] bg-gradient-radial from-indigo-100/30 via-white to-white pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6">
+            <!-- Breadcrumbs -->
+            <nav class="text-sm mb-8">
+                <a href="portfolio.html" class="text-slate-500 hover:text-indigo-600">案例</a>
+                <span class="mx-2 text-slate-400">/</span>
+                <span class="text-slate-800 font-medium">华泰集团官网</span>
+            </nav>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Left Column (Content) -->
+                <div class="lg:col-span-2">
+                    <div class="mb-8">
+                        <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight mb-4">华泰集团官网</h1>
+                        <p class="text-lg text-slate-500 font-light">采用现代化设计语言，融合3D视觉效果，打造具有国际影响力的企业官网。</p>
+                    </div>
+
+                    <div class="relative aspect-video rounded-xl overflow-hidden shadow-2xl shadow-slate-200 mb-12">
+                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                            <span class="iconify text-white/20" data-icon="lucide:monitor" data-width="120"></span>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-lg max-w-none text-slate-600 font-light">
+                        <h2>项目背景</h2>
+                        <p>华泰集团作为国内领先的综合性企业集团，其原有官网已无法满足日益增长的品牌展示和国际化业务需求。旧版网站在视觉设计、用户体验和技术架构上均显陈旧，难以有效传递集团的创新实力和全球视野。</p>
+                        
+                        <h2>核心挑战</h2>
+                        <p>本次改版的核心挑战在于，如何在展现集团深厚底蕴的同时，凸显其在前沿科技领域的领导地位。我们需要设计一个既庄重权威，又富有现代感和科技感的网站，并通过创新的交互方式提升用户体验。</p>
+                        
+                        <h2>解决方案</h2>
+                        <p>我们提出了一套完整的数字化品牌升级方案：</p>
+                        <ul>
+                            <li><strong>视觉设计:</strong> 采用极简主义风格，结合宏大的页面布局和高质量的视觉素材，营造出国际化的品牌形象。我们引入了基于Three.js的3D动态效果作为首页背景，象征着集团的多元化业务和不断探索的科技精神。</li>
+                            <li><strong>交互体验:</strong> 设计了流畅的微交互和页面过渡动画，提供了沉浸式的浏览体验。网站采用响应式设计，确保在桌面、平板和手机等不同设备上都能完美呈现。</li>
+                            <li><strong>技术架构:</strong> 前端采用React构建，保证了页面的高性能和可扩展性。后端则基于Node.js，为官网提供了稳定、高效的数据支持。</li>
+                        </ul>
+
+                        <h2>成果展示</h2>
+                        <p>新版官网发布后，取得了显著成果：</p>
+                    </div>
+                </div>
+
+                <!-- Right Column (Info) -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-28">
+                        <div class="bg-white/60 backdrop-blur-lg border border-slate-200/60 rounded-2xl p-8">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-6">项目信息</h3>
+                            
+                            <ul class="space-y-5 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-slate-500">客户</span>
+                                    <span class="font-medium text-slate-800">华泰集团</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-slate-500">行业</span>
+                                    <span class="font-medium text-slate-800">综合集团</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-slate-500">服务</span>
+                                    <span class="font-medium text-slate-800">网站建设</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-slate-500">完成时间</span>
+                                    <span class="font-medium text-slate-800">2023年</span>
+                                </li>
+                            </ul>
+
+                            <div class="h-px bg-slate-200 my-8"></div>
+
+                            <h4 class="text-lg font-semibold text-slate-900 mb-4">技术栈</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm rounded-full">React</span>
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm rounded-full">Three.js</span>
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm rounded-full">Node.js</span>
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm rounded-full">Tailwind CSS</span>
+                            </div>
+
+                            <a href="#" class="mt-8 w-full inline-block text-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-200">
+                                访问网站
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Cases Section -->
+    <section class="py-20 bg-white border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-6">
+             <h2 class="text-3xl font-semibold text-slate-900 tracking-tight text-center mb-12">其他案例</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 2 - Mini Program -->
+                <div class="case-card bg-slate-50/50 border border-slate-200/60 rounded-2xl overflow-hidden group" data-category="miniprogram">
+                    <div class="relative h-48 bg-gradient-to-br from-cyan-500 to-teal-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/20" data-icon="lucide:smartphone" data-width="80"></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">美妆商城小程序</h3>
+                        <p class="text-sm text-slate-500 mb-4">集成直播带货、社交分享、会员积分等功能，日活用户突破10万。</p>
+                        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- Case 3 - E-commerce -->
+                <div class="case-card bg-slate-50/50 border border-slate-200/60 rounded-2xl overflow-hidden group" data-category="ecommerce">
+                    <div class="relative h-48 bg-gradient-to-br from-rose-500 to-pink-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/20" data-icon="lucide:shopping-cart" data-width="80"></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">B2B批发采购平台</h3>
+                        <p class="text-sm text-slate-500 mb-4">支持多级分销、供应链管理、金融支付等复杂业务场景。</p>
+                        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">查看详情 →</a>
+                    </div>
+                </div>
+
+                <!-- Case 4 - System -->
+                <div class="case-card bg-slate-50/50 border border-slate-200/60 rounded-2xl overflow-hidden group" data-category="system">
+                    <div class="relative h-48 bg-gradient-to-br from-emerald-500 to-green-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/20" data-icon="lucide:server" data-width="80"></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-2">智慧物业管理系统</h3>
+                        <p class="text-sm text-slate-500 mb-4">集成IoT设备监控、智能门禁、报事报修等功能，提升物业管理效率。</p>
+                        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/60 bg-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="20"></span>
+                        <span class="text-slate-900 font-semibold tracking-tighter">易诚科技</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">服务项目</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">微信小程序开发</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">品牌官网建设</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">电商系统开发</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">UI/UX 设计</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">关于我们</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">公司简介</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">成功案例</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">加入我们</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">合作伙伴</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+                            contact@yicheng-tech.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
+                            400-123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
+                            成都市龙泉驿区西河大道
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:github" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="16"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body></html>
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->

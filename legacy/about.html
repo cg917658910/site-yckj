@@ -1,0 +1,684 @@
+<html lang="zh-CN" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 易诚科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b', 
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for light theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Subtle grid background - Darkened for light mode visibility */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+        
+        /* Glass morphism utilities - Light Mode */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Team card animations */
+        .team-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .team-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        .team-card:hover .team-image {
+            transform: scale(1.1);
+        }
+        .team-image {
+            transition: transform 0.3s ease;
+        }
+
+        /* Timeline styles */
+        .timeline-line {
+            background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+            background-size: 100% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 0% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Value card hover */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+        }
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .value-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="24" data-height="24"></span>
+                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚科技</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-normal text-slate-500">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors duration-200">首页</a>
+                <a href="services.html" class="hover:text-indigo-600 transition-colors duration-200">服务</a>
+                <a href="portfolio.html" class="hover:text-indigo-600 transition-colors duration-200">案例</a>
+                <a href="about.html" class="text-indigo-600 font-medium">关于</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors duration-200">联系</a>
+            </div>
+
+            <a href="tel:400-123-4567" class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
+                <span>立即咨询</span>
+                <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-slate-500 hover:text-slate-800">
+                <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                </span>
+                <span class="text-xs font-medium text-indigo-600 tracking-wide uppercase">关于我们</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold text-slate-900 tracking-tight leading-[1.1] mb-8">
+                诚信铸就<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">品质未来</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-500 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                易诚科技成立于2015年，是一家专注于高端网站建设、移动应用开发和企业系统定制的科技公司。我们用诚信和专业，为客户创造价值。
+            </p>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">8年</div>
+                    <div class="text-sm text-slate-500">行业经验</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-cyan-600 mb-2">50+</div>
+                    <div class="text-sm text-slate-500">专业团队</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-rose-600 mb-2">200+</div>
+                    <div class="text-sm text-slate-500">成功项目</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-teal-600 mb-2">98%</div>
+                    <div class="text-sm text-slate-500">客户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">我们的故事</h2>
+                    <p class="text-slate-500 font-light leading-relaxed">
+                        易诚科技创立于2015年，由几位志同道合的技术专家共同组建。我们深知技术对于企业发展的重要性，也理解诚信在商业合作中的珍贵价值。
+                    </p>
+                    <p class="text-slate-500 font-light leading-relaxed">
+                        从最初的小团队发展到如今50多人的专业公司，我们始终坚持以客户为中心，以技术为驱动，以诚信为基石。每一个项目都是我们对品质的承诺，每一次合作都是我们对信任的珍惜。
+                    </p>
+                    <p class="text-slate-500 font-light leading-relaxed">
+                        今天，易诚科技已经成为行业内备受认可的技术服务商，但我们依然保持着创业初心：用最好的技术，服务最信任我们的客户。
+                    </p>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-60"></div>
+                    <div class="relative bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-200/50">
+                        <div class="h-64 bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
+                            <span class="iconify text-white/20" data-icon="lucide:building-2" data-width="80"></span>
+                        </div>
+                        <div class="p-8 space-y-4">
+                            <div class="h-4 w-3/4 rounded bg-slate-100"></div>
+                            <div class="h-4 w-1/2 rounded bg-slate-100"></div>
+                            <div class="h-20 w-full rounded-lg bg-gradient-to-tr from-indigo-50 to-cyan-50 border border-slate-100 flex items-center justify-center">
+                                <span class="text-xs font-mono text-indigo-400">Company Journey</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Values -->
+    <section class="py-20 border-y border-slate-200/60 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">核心价值观</h2>
+                <p class="text-slate-500 font-light">指导我们前进的信念和原则</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="value-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="value-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:hand-heart" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">诚信为本</h3>
+                    <p class="text-sm text-slate-500">以诚待人，以信立业，诚信是我们最珍贵的资产</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="value-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:sparkles" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">追求卓越</h3>
+                    <p class="text-sm text-slate-500">精益求精，永不满足，为客户创造超预期的价值</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="value-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:users" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">团队协作</h3>
+                    <p class="text-sm text-slate-500">同心协力，互相成就，团队的力量无穷大</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="value-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:lightbulb" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">创新思维</h3>
+                    <p class="text-sm text-slate-500">拥抱变化，勇于创新，用技术改变世界</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">核心团队</h2>
+                <p class="text-slate-500 font-light">经验丰富的专业团队，为您提供最优质的服务</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 overflow-hidden">
+                        <div class="team-image absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/30" data-icon="lucide:user" data-width="80"></span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">CEO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-1">张明</h3>
+                        <p class="text-sm text-indigo-600 mb-3">创始人 & CEO</p>
+                        <p class="text-xs text-slate-500 mb-4">10年互联网行业经验，曾任多家知名科技公司技术总监</p>
+                        <div class="flex gap-2">
+                            <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-cyan-500 to-teal-600 overflow-hidden">
+                        <div class="team-image absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/30" data-icon="lucide:user" data-width="80"></span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">CTO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-1">李华</h3>
+                        <p class="text-sm text-cyan-600 mb-3">技术总监 & CTO</p>
+                        <p class="text-xs text-slate-500 mb-4">全栈技术专家，精通前后端开发，架构设计经验丰富</p>
+                        <div class="flex gap-2">
+                            <a href="#" class="text-slate-400 hover:text-cyan-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:github" data-width="16"></span>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-cyan-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-emerald-500 to-green-600 overflow-hidden">
+                        <div class="team-image absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/30" data-icon="lucide:user" data-width="80"></span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">设计总监</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-1">王芳</h3>
+                        <p class="text-sm text-emerald-600 mb-3">设计总监</p>
+                        <p class="text-xs text-slate-500 mb-4">资深UI/UX设计师，作品多次获得国际设计大奖</p>
+                        <div class="flex gap-2">
+                            <a href="#" class="text-slate-400 hover:text-emerald-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:dribbble" data-width="16"></span>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-emerald-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 bg-gradient-to-br from-rose-500 to-pink-600 overflow-hidden">
+                        <div class="team-image absolute inset-0 flex items-center justify-center">
+                            <span class="iconify text-white/30" data-icon="lucide:user" data-width="80"></span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">运营总监</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-1">刘强</h3>
+                        <p class="text-sm text-rose-600 mb-3">运营总监</p>
+                        <p class="text-xs text-slate-500 mb-4">8年项目管理经验，擅长团队协作和客户沟通</p>
+                        <div class="flex gap-2">
+                            <a href="#" class="text-slate-400 hover:text-rose-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:twitter" data-width="16"></span>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-rose-600 transition-colors">
+                                <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="py-20 border-y border-slate-200/60 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">发展历程</h2>
+                <p class="text-slate-500 font-light">见证我们的成长足迹</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 timeline-line -translate-x-1/2 hidden md:block"></div>
+
+                <div class="space-y-12">
+                    <!-- 2015 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-right md:pr-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-sm font-medium mb-2">
+                                <span class="iconify" data-icon="lucide:calendar" data-width="16"></span>
+                                2015年
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">公司成立</h3>
+                            <p class="text-sm text-slate-500">易诚科技在北京成立，开始专注网站建设服务</p>
+                        </div>
+                        <div class="md:pl-8">
+                            <div class="w-4 h-4 bg-indigo-500 rounded-full mx-auto md:ml-auto md:mr-0 shadow-lg"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2017 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="order-2 md:order-1 md:pl-8">
+                            <div class="w-4 h-4 bg-cyan-500 rounded-full mx-auto md:mr-auto md:ml-0 shadow-lg"></div>
+                        </div>
+                        <div class="order-1 md:order-2 md:pr-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 text-cyan-600 text-sm font-medium mb-2">
+                                <span class="iconify" data-icon="lucide:calendar" data-width="16"></span>
+                                2017年
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">业务扩展</h3>
+                            <p class="text-sm text-slate-500">团队扩展至20人，开始提供移动应用开发服务</p>
+                        </div>
+                    </div>
+
+                    <!-- 2019 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-right md:pr-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-sm font-medium mb-2">
+                                <span class="iconify" data-icon="lucide:calendar" data-width="16"></span>
+                                2019年
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">技术升级</h3>
+                            <p class="text-sm text-slate-500">引入前沿技术栈，完成100+项目交付</p>
+                        </div>
+                        <div class="md:pl-8">
+                            <div class="w-4 h-4 bg-emerald-500 rounded-full mx-auto md:ml-auto md:mr-0 shadow-lg"></div>
+                        </div>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="order-2 md:order-1 md:pl-8">
+                            <div class="w-4 h-4 bg-rose-500 rounded-full mx-auto md:mr-auto md:ml-0 shadow-lg"></div>
+                        </div>
+                        <div class="order-1 md:order-2 md:pr-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-sm font-medium mb-2">
+                                <span class="iconify" data-icon="lucide:calendar" data-width="16"></span>
+                                2021年
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">规模扩大</h3>
+                            <p class="text-sm text-slate-500">团队达到50人，成为行业知名技术服务商</p>
+                        </div>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-right md:pr-8">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-sm font-medium mb-2">
+                                <span class="iconify" data-icon="lucide:calendar" data-width="16"></span>
+                                2023年
+                            </div>
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">创新发展</h3>
+                            <p class="text-sm text-slate-500">推出AI+解决方案，服务客户超过150家</p>
+                        </div>
+                        <div class="md:pl-8">
+                            <div class="w-4 h-4 bg-purple-500 rounded-full mx-auto md:ml-auto md:mr-0 shadow-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 mx-6">
+        <div class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">加入我们</h2>
+                <p class="text-slate-300 mb-8 max-w-xl mx-auto font-light">我们正在寻找有激情、有才华的你，一起创造更美好的未来。</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">查看职位</button>
+                    <button class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/60 bg-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="20"></span>
+                        <span class="text-slate-900 font-semibold tracking-tighter">易诚科技</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">服务项目</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">网站建设</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">小程序开发</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">系统开发</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-600 transition-colors">UI/UX 设计</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">关于我们</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="about.html" class="hover:text-indigo-600 transition-colors">公司简介</a></li>
+                        <li><a href="portfolio.html" class="hover:text-indigo-600 transition-colors">成功案例</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">加入我们</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">合作伙伴</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+                            contact@yicheng-tech.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
+                            400-123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
+                            成都市龙泉驿区西河大道
+                        </li>
+                        <li class="flex items-center gap-2 cursor-pointer hover:text-emerald-600 transition-colors" onclick="showWeChatQR()">
+                            <span class="iconify" data-icon="lucide:message-circle" data-width="14"></span>
+                            微信客服
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:github" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="16"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WeChat QR Modal -->
+    <div id="wechatModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-sm mx-4 relative">
+            <button onclick="hideWeChatQR()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <span class="iconify" data-icon="lucide:x" data-width="24"></span>
+            </button>
+            
+            <div class="text-center">
+                <div class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                    <div class="bg-white p-4 rounded-lg">
+                        <span class="iconify text-emerald-500" data-icon="lucide:qr-code" data-width="120"></span>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">微信客服</h3>
+                <p class="text-sm text-slate-500 mb-4">扫码添加客服微信</p>
+                
+                <div class="flex gap-2 justify-center">
+                    <button onclick="saveQRCode()" class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
+                        保存二维码
+                    </button>
+                    <button onclick="hideWeChatQR()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
+                        关闭
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show WeChat QR modal
+        function showWeChatQR() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide WeChat QR modal
+        function hideWeChatQR() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Save QR Code (download as image)
+        function saveQRCode() {
+            // Create a canvas element
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            // Draw background
+            ctx.fillStyle = '#10b981';
+            ctx.fillRect(0, 0, 300, 300);
+            
+            // Draw white square
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(50, 50, 200, 200);
+            
+            // Draw QR code pattern (simplified)
+            ctx.fillStyle = '#000000';
+            for(let i = 0; i < 8; i++) {
+                for(let j = 0; j < 8; j++) {
+                    if(Math.random() > 0.5) {
+                        ctx.fillRect(60 + i * 20, 60 + j * 20, 15, 15);
+                    }
+                }
+            }
+            
+            // Download image
+            const link = document.createElement('a');
+            link.download = 'yicheng-tech-wechat.jpg';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('wechatModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideWeChatQR();
+            }
+        });
+    </script>
+
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->

@@ -1,0 +1,836 @@
+<html lang="zh-CN" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务 - 易诚科技</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b', 
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for light theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Subtle grid background - Darkened for light mode visibility */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+        
+        /* Glass morphism utilities - Light Mode */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Service card animations */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .service-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Tab styles */
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Process line animation */
+        .process-line {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+            background-size: 200% 100%;
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="24" data-height="24"></span>
+                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚科技</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-normal text-slate-500">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors duration-200">首页</a>
+                <a href="services.html" class="text-indigo-600 font-medium">服务</a>
+                <a href="portfolio.html" class="hover:text-indigo-600 transition-colors duration-200">案例</a>
+                <a href="about.html" class="hover:text-indigo-600 transition-colors duration-200">关于</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors duration-200">联系</a>
+            </div>
+
+            <a href="tel:400-123-4567" class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
+                <span>立即咨询</span>
+                <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-slate-500 hover:text-slate-800">
+                <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 bg-grid pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                </span>
+                <span class="text-xs font-medium text-indigo-600 tracking-wide uppercase">专业服务</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold text-slate-900 tracking-tight leading-[1.1] mb-8">
+                全方位<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">技术服务</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-500 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                从概念到实现，我们提供一站式数字化解决方案。专业团队、前沿技术、贴心服务，助力企业数字化转型。
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="portfolio.html" class="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-500 hover:-translate-y-0.5 shadow-lg shadow-indigo-200 transition-all duration-200 flex items-center justify-center gap-2 group">
+                    获取方案
+                    <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:chevron-right" data-width="16"></span>
+                </a>
+                <a href="contact.html" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-200 text-slate-600 font-medium text-sm rounded-lg hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 shadow-sm">
+                    服务咨询
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">核心服务领域</h2>
+                <p class="text-slate-500 font-light">我们专注于为企业提供高质量的数字化服务</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Web Development -->
+                <div class="service-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:globe" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">网站建设</h3>
+                    <p class="text-sm text-slate-500 mb-4">响应式设计、SEO优化、高性能架构</p>
+                    <ul class="text-xs text-slate-400 space-y-1 text-left">
+                        <li>• 企业官网</li>
+                        <li>• 电商平台</li>
+                        <li>• 营销网站</li>
+                    </ul>
+                </div>
+
+                <!-- Mini Program -->
+                <div class="service-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:smartphone" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">小程序开发</h3>
+                    <p class="text-sm text-slate-500 mb-4">微信、支付宝、抖音多平台覆盖</p>
+                    <ul class="text-xs text-slate-400 space-y-1 text-left">
+                        <li>• 商城小程序</li>
+                        <li>• 工具类应用</li>
+                        <li>• 营销活动页</li>
+                    </ul>
+                </div>
+
+                <!-- System Development -->
+                <div class="service-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:server" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">系统开发</h3>
+                    <p class="text-sm text-slate-500 mb-4">定制化管理系统、业务流程优化</p>
+                    <ul class="text-xs text-slate-400 space-y-1 text-left">
+                        <li>• ERP系统</li>
+                        <li>• CRM系统</li>
+                        <li>• 数据分析平台</li>
+                    </ul>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="service-card glass glass-hover rounded-2xl p-6 text-center group">
+                    <div class="service-icon w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white">
+                        <span class="iconify" data-icon="lucide:palette" data-width="32"></span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2">UI/UX设计</h3>
+                    <p class="text-sm text-slate-500 mb-4">用户体验设计、界面视觉设计</p>
+                    <ul class="text-xs text-slate-400 space-y-1 text-left">
+                        <li>• 原型设计</li>
+                        <li>• 视觉设计</li>
+                        <li>• 交互设计</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="py-20 border-y border-slate-200/60 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">详细服务内容</h2>
+                <p class="text-slate-500 font-light">深入了解我们的专业服务能力</p>
+            </div>
+
+            <!-- Service Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="tab-btn active px-6 py-3 rounded-full text-sm font-medium border border-slate-200 bg-white" data-tab="web">
+                    网站开发
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full text-sm font-medium border border-slate-200 bg-white" data-tab="app">
+                    应用开发
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full text-sm font-medium border border-slate-200 bg-white" data-tab="design">
+                    设计服务
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full text-sm font-medium border border-slate-200 bg-white" data-tab="consulting">
+                    技术咨询
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <div class="tab-content" data-content="web">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">专业网站开发服务</h3>
+                        <p class="text-slate-500 mb-6">我们提供从需求分析到上线部署的全流程网站开发服务，确保每个项目都能满足客户的业务需求。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-indigo-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">前端开发</h4>
+                                    <p class="text-sm text-slate-500">React、Vue、Angular等现代框架，响应式设计</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-indigo-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">后端开发</h4>
+                                    <p class="text-sm text-slate-500">Node.js、Python、Java等，RESTful API设计</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-indigo-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">数据库设计</h4>
+                                    <p class="text-sm text-slate-500">MySQL、PostgreSQL、MongoDB等优化方案</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content hidden" data-content="app">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">移动应用开发</h3>
+                        <p class="text-slate-500 mb-6">涵盖小程序、APP、H5等多种移动应用形态，提供跨平台解决方案。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-cyan-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">微信小程序</h4>
+                                    <p class="text-sm text-slate-500">原生开发、云开发、多端适配</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-cyan-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">移动APP</h4>
+                                    <p class="text-sm text-slate-500">React Native、Flutter跨平台开发</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content hidden" data-content="design">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">UI/UX设计服务</h3>
+                        <p class="text-slate-500 mb-6">以用户为中心的设计理念，打造美观实用的数字产品界面。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-rose-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">界面设计</h4>
+                                    <p class="text-sm text-slate-500">视觉设计、图标设计、品牌形象设计</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-rose-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">交互设计</h4>
+                                    <p class="text-sm text-slate-500">原型设计、用户流程、动效设计</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content hidden" data-content="consulting">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4">技术咨询</h3>
+                        <p class="text-slate-500 mb-6">为企业提供专业的技术解决方案咨询，助力数字化转型。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-emerald-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">架构设计</h4>
+                                    <p class="text-sm text-slate-500">系统架构、技术选型、性能优化</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="iconify text-emerald-500 mt-1" data-icon="lucide:check-circle" data-width="20"></span>
+                                <div>
+                                    <h4 class="font-medium text-slate-900">技术培训</h4>
+                                    <p class="text-sm text-slate-500">团队培训、技术分享、最佳实践</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-60"></div>
+                    <div class="relative bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-200/50">
+                        <div class="h-10 border-b border-slate-100 bg-slate-50/50 flex items-center px-4 gap-2">
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                        </div>
+                        <div class="p-8 space-y-4">
+                            <div class="h-4 w-3/4 rounded bg-slate-100"></div>
+                            <div class="h-4 w-1/2 rounded bg-slate-100"></div>
+                            <div class="h-32 w-full rounded-lg bg-gradient-to-tr from-indigo-50 to-cyan-50 border border-slate-100 flex items-center justify-center">
+                                <span class="text-xs font-mono text-indigo-400">Service Architecture</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="h-16 rounded bg-slate-100"></div>
+                                <div class="h-16 rounded bg-slate-100"></div>
+                                <div class="h-16 rounded bg-slate-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">服务流程</h2>
+                <p class="text-slate-500 font-light">标准化服务流程，确保项目高质量交付</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line -->
+                <div class="absolute top-1/2 left-0 w-full h-1 process-line hidden md:block -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="group text-center">
+                        <div class="w-12 h-12 mx-auto bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center text-indigo-500 font-bold text-lg mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                            1
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900 mb-2">需求沟通</h3>
+                        <p class="text-xs text-slate-500">深入了解业务需求</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="group text-center">
+                        <div class="w-12 h-12 mx-auto bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center text-indigo-500 font-bold text-lg mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                            2
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900 mb-2">方案设计</h3>
+                        <p class="text-xs text-slate-500">制定技术解决方案</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="group text-center">
+                        <div class="w-12 h-12 mx-auto bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center text-indigo-500 font-bold text-lg mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                            3
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900 mb-2">开发实施</h3>
+                        <p class="text-xs text-slate-500">敏捷开发快速迭代</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="group text-center">
+                        <div class="w-12 h-12 mx-auto bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center text-indigo-500 font-bold text-lg mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                            4
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900 mb-2">测试验收</h3>
+                        <p class="text-xs text-slate-500">全面测试质量保证</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="group text-center">
+                        <div class="w-12 h-12 mx-auto bg-white border-2 border-indigo-500 rounded-full flex items-center justify-center text-indigo-500 font-bold text-lg mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                            5
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900 mb-2">上线维护</h3>
+                        <p class="text-xs text-slate-500">部署上线持续优化</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-20 border-y border-slate-200/60 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">技术栈</h2>
+                <p class="text-slate-500 font-light">我们掌握前沿技术，为客户提供最佳解决方案</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Frontend -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-blue-50 flex items-center justify-center">
+                        <span class="iconify text-blue-500" data-icon="logos:react" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">React</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-emerald-50 flex items-center justify-center">
+                        <span class="iconify text-emerald-500" data-icon="logos:vue" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Vue.js</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-red-50 flex items-center justify-center">
+                        <span class="iconify text-red-500" data-icon="logos:angular" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Angular</h4>
+                </div>
+
+                <!-- Backend -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-green-50 flex items-center justify-center">
+                        <span class="iconify text-green-500" data-icon="logos:nodejs" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Node.js</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-blue-50 flex items-center justify-center">
+                        <span class="iconify text-blue-500" data-icon="logos:python" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Python</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-orange-50 flex items-center justify-center">
+                        <span class="iconify text-orange-500" data-icon="logos:java" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Java</h4>
+                </div>
+
+                <!-- Database -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-blue-50 flex items-center justify-center">
+                        <span class="iconify text-blue-500" data-icon="logos:mysql" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">MySQL</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-indigo-50 flex items-center justify-center">
+                        <span class="iconify text-indigo-500" data-icon="logos:postgresql" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">PostgreSQL</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-green-50 flex items-center justify-center">
+                        <span class="iconify text-green-500" data-icon="logos:mongodb" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">MongoDB</h4>
+                </div>
+
+                <!-- Mobile -->
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-cyan-50 flex items-center justify-center">
+                        <span class="iconify text-cyan-500" data-icon="logos:wechat" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">微信小程序</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-blue-50 flex items-center justify-center">
+                        <span class="iconify text-blue-500" data-icon="logos:flutter" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">Flutter</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-xl bg-cyan-50 flex items-center justify-center">
+                        <span class="iconify text-cyan-500" data-icon="logos:react" data-width="40"></span>
+                    </div>
+                    <h4 class="text-sm font-medium text-slate-900">React Native</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 mx-6">
+        <div class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">需要技术服务？</h2>
+                <p class="text-slate-300 mb-8 max-w-xl mx-auto font-light">专业团队为您提供最优质的技术服务，立即联系我们获取免费咨询。</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">免费咨询</button>
+                    <button class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
+                        获取报价
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/60 bg-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="20"></span>
+                        <span class="text-slate-900 font-semibold tracking-tighter">易诚科技</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">服务项目</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">网站建设</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">小程序开发</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">系统开发</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition-colors">UI/UX 设计</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">关于我们</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="about.html" class="hover:text-indigo-600 transition-colors">公司简介</a></li>
+                        <li><a href="portfolio.html" class="hover:text-indigo-600 transition-colors">成功案例</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">加入我们</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">合作伙伴</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+                            contact@yicheng-tech.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
+                            400-123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
+                            成都市龙泉驿区西河大道
+                        </li>
+                        <li class="flex items-center gap-2 cursor-pointer hover:text-emerald-600 transition-colors" onclick="showWeChatQR()">
+                            <span class="iconify" data-icon="lucide:message-circle" data-width="14"></span>
+                            微信客服
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">关于我们</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="关于我们.html" class="hover:text-indigo-600 transition-colors">公司简介</a></li>
+                        <li><a href="案例展示.html" class="hover:text-indigo-600 transition-colors">成功案例</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">加入我们</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">合作伙伴</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-slate-900 font-medium text-sm mb-4">联系方式</h4>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+                            contact@yicheng-tech.com
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
+                            400-123-4567
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
+                            成都市龙泉驿区西河大道
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:github" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="16"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const tabName = this.getAttribute('data-tab');
+
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Show selected tab content
+                    const selectedContent = document.querySelector(`[data-content="${tabName}"]`);
+                    if (selectedContent) {
+                        selectedContent.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Show WeChat QR modal
+        function showWeChatQR() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide WeChat QR modal
+        function hideWeChatQR() {
+            const modal = document.getElementById('wechatModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Save QR Code (download as image)
+        function saveQRCode() {
+            // Create a canvas element
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 300;
+            const ctx = canvas.getContext('2d');
+            
+            // Draw background
+            ctx.fillStyle = '#10b981';
+            ctx.fillRect(0, 0, 300, 300);
+            
+            // Draw white square
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(50, 50, 200, 200);
+            
+            // Draw QR code pattern (simplified)
+            ctx.fillStyle = '#000000';
+            for(let i = 0; i < 8; i++) {
+                for(let j = 0; j < 8; j++) {
+                    if(Math.random() > 0.5) {
+                        ctx.fillRect(60 + i * 20, 60 + j * 20, 15, 15);
+                    }
+                }
+            }
+            
+            // Download image
+            const link = document.createElement('a');
+            link.download = 'yicheng-tech-wechat.jpg';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('wechatModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        hideWeChatQR();
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- WeChat QR Modal -->
+    <div id="wechatModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-sm mx-4 relative">
+            <button onclick="hideWeChatQR()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <span class="iconify" data-icon="lucide:x" data-width="24"></span>
+            </button>
+            
+            <div class="text-center">
+                <div class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                    <div class="bg-white p-4 rounded-lg">
+                        <span class="iconify text-emerald-500" data-icon="lucide:qr-code" data-width="120"></span>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-slate-900 mb-2">微信客服</h3>
+                <p class="text-sm text-slate-500 mb-4">扫码添加客服微信</p>
+                
+                <div class="flex gap-2 justify-center">
+                    <button onclick="saveQRCode()" class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
+                        保存二维码
+                    </button>
+                    <button onclick="hideWeChatQR()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
+                        关闭
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>
+<!--Start of Tawk.to Script-->
+<script type=text/javascript>
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66969b25becc2fed692f8e6c/1i2uemh3d';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
