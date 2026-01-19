@@ -142,6 +142,7 @@ export const ctaBlock = {
 
 export const serviceCategories = [
   {
+    key: 'website',
     title: '官网设计与开发',
     description: '提供定制官网设计 ，响应式布局 ，高效CMS管理 ，助力在线表现。',
     icon: 'lucide:globe',
@@ -153,6 +154,7 @@ export const serviceCategories = [
     image: 'service-website.png',
   },
   {
+    key: 'creative',
     title: '创意 H5 页面',
     description: '互动营销页、活动小游戏与社交裂变方案。',
     icon: 'lucide:sparkles',
@@ -164,6 +166,7 @@ export const serviceCategories = [
     image: 'service-h5.png',
   },
   {
+    key: 'miniprogram',
     title: '小程序开发',
     description: '覆盖微信/抖音/支付宝的服务、商城与会员体系。',
     icon: 'lucide:smartphone',
@@ -175,6 +178,7 @@ export const serviceCategories = [
     image: 'service-miniprogram.png',
   },
   {
+    key: 'wechat',
     title: '公众号SVG开发',
     description: '公众号智能运营、SVG 视觉与品牌资产管理。',
     icon: 'lucide:message-circle',
@@ -186,6 +190,7 @@ export const serviceCategories = [
     image: 'service-wechat.png',
   },
   {
+    key: 'app',
     title: 'APP开发',
     description: '创造令人沉浸的2D和3D游戏 ，跨平台支持 ，提供多人在线游戏体验 ，吸引   广泛受众',
     icon: 'lucide:tablet-smartphone',
@@ -197,6 +202,7 @@ export const serviceCategories = [
     image: 'service-app.png',
   },
   {
+    key: 'game',
     title: '手游开发',
     description: '2D/3D 手游、互动体验与游戏化解决方案。',
     icon: 'lucide:gamepad-2',
@@ -208,6 +214,7 @@ export const serviceCategories = [
     image: 'service-game.png',
   },
   {
+    key: 'bigscreen',
     title: '大屏数据设计与开发',
     description: '运营驾驶舱、展厅大屏与实时数据监控。',
     icon: 'lucide:panel-right',
@@ -219,6 +226,7 @@ export const serviceCategories = [
     image: 'service-bigscreen.png',
   },
   {
+    key: 'system',
     title: '管理系统 (CMS/ERP/CRM)',
     description: '企业级业务系统，支撑内容、供应链与客户运营。',
     icon: 'lucide:server',
@@ -230,6 +238,11 @@ export const serviceCategories = [
     image: 'service-system.png',
   },
 ]
+
+const categoryMap = serviceCategories.reduce((acc, category) => {
+  acc[category.key] = category
+  return acc
+}, {})
 
 export const serviceProcessSteps = [
   { step: '1', title: '业务梳理', description: '理解行业场景与增长目标。' },
@@ -256,22 +269,28 @@ export const techStack = [
 
 export const caseFilters = [
   { label: '全部案例', value: 'all' },
-  { label: '官网/品牌站', value: 'website' },
-  { label: '创意互动', value: 'creative' },
-  { label: '小程序 & APP', value: 'miniprogram' },
-  { label: '大屏/系统', value: 'system' },
-  { label: '跨境电商', value: 'ecommerce' },
+  ...serviceCategories.map((category) => ({
+    label: category.title,
+    value: category.key,
+  })),
 ]
 
+const composeCase = (item) => {
+  const category = categoryMap[item.category] ?? {}
+  return {
+    badge: category.title ?? item.badge ?? '',
+    gradient: category.accent ?? item.gradient ?? 'from-slate-500 to-slate-700',
+    icon: category.icon ?? item.icon ?? 'lucide:briefcase',
+    ...item,
+  }
+}
+
 export const caseStudies = [
-  {
+  composeCase({
     slug: 'huatai-group',
     title: '华泰集团官网',
     description: '焕新集团品牌站，融合 3D 动效与多语言内容，实现全球化传播。',
     category: 'website',
-    badge: '官网/品牌站',
-    gradient: 'from-indigo-500 to-purple-600',
-    icon: 'lucide:monitor',
     tags: ['Vue3', 'Three.js', 'Headless CMS'],
     stats: { label: '2024年交付', value: '48% 询盘增长' },
     detail: {
@@ -284,45 +303,17 @@ export const caseStudies = [
       solution: [
         '打造沉浸式 3D 视觉与交互动效，突出品牌科技力。',
         '基于 Vue3 + Vite + Tailwind 构建高性能站点。',
-        '接入 headless CMS 与多节点加速，简化全球内容分发。',
+        '接入 Headless CMS 与全球节点加速，简化内容分发。',
       ],
       results: ['平均停留时长提升 62%', '国际访问速度提升 35%', '询盘转化率提升 48%'],
     },
-  },
-  {
-    slug: 'beauty-mini-program',
-    title: '臻色美妆私域小程序',
-    description: '集合直播、分销、会员体系的电商小程序，实现全链路私域运营。',
-    category: 'miniprogram',
-    badge: '小程序 & APP',
-    gradient: 'from-cyan-500 to-teal-600',
-    icon: 'lucide:smartphone',
-    tags: ['微信小程序', '云开发', '直播'],
-    stats: { label: '2023年交付', value: '10W+ 日活' },
-    detail: {
-      client: '臻色美妆',
-      industry: '新零售',
-      services: '小程序开发',
-      year: '2023年',
-      background: '品牌希望搭建私域阵地，沉淀会员与导购资产。',
-      challenge: '直播、社群、分销等场景复杂，对运营效率要求高。',
-      solution: [
-        '搭建直播带货、实时互动及导购分佣模块。',
-        '构建会员成长、积分商城与智能推荐体系。',
-        '提供数据中台看板，实现精细化运营与复购提醒。',
-      ],
-      results: ['日活突破 10 万', '复购率提升 36%', '会员贡献 GMV 68%'],
-    },
-  },
-  {
+  }),
+  composeCase({
     slug: 'smart-screen-h5',
     title: '科技品牌创意 H5',
     description: '围绕新品发布打造沉浸式 H5，结合互动闯关与社交裂变玩法。',
     category: 'creative',
-    badge: '创意互动',
-    gradient: 'from-rose-500 to-pink-600',
-    icon: 'lucide:sparkles',
-    tags: ['WebGL', 'Data Tracking', 'Gamification'],
+    tags: ['WebGL', '数据埋点', '社交裂变'],
     stats: { label: '2024年上线', value: '120万+ 互动' },
     detail: {
       client: 'ZMAX 科技',
@@ -338,15 +329,122 @@ export const caseStudies = [
       ],
       results: ['累计互动 120 万+', '社交分享率 68%', '活动期间线索增长 3.2 倍'],
     },
-  },
-  {
+  }),
+  composeCase({
+    slug: 'beauty-mini-program',
+    title: '臻色美妆私域小程序',
+    description: '集合直播、分销、会员体系的电商小程序，实现全链路私域运营。',
+    category: 'miniprogram',
+    tags: ['微信小程序', '云开发', '私域电商'],
+    stats: { label: '2023年交付', value: '10W+ 日活' },
+    detail: {
+      client: '臻色美妆',
+      industry: '新零售',
+      services: '小程序开发',
+      year: '2023年',
+      background: '品牌希望搭建私域阵地，沉淀会员与导购资产。',
+      challenge: '直播、社群、分销等场景复杂，对运营效率要求高。',
+      solution: [
+        '搭建直播带货、实时互动及导购分佣模块。',
+        '构建会员成长、积分商城与智能推荐体系。',
+        '提供数据中台看板，实现精细化运营与复购提醒。',
+      ],
+      results: ['日活突破 10 万', '复购率提升 36%', '会员贡献 GMV 68%'],
+    },
+  }),
+  composeCase({
+    slug: 'wechat-automation-suite',
+    title: '城市服务号自动化运营',
+    description: '打造多账号矩阵，联动客服、消息推送与数据分析，沉淀用户资产。',
+    category: 'wechat',
+    tags: ['公众号', '自动化流程', '客服联动'],
+    stats: { label: '2024年交付', value: '粉丝增长 65%' },
+    detail: {
+      client: '蓉城生活圈',
+      industry: '智慧城市',
+      services: '公众号运营系统',
+      year: '2024年',
+      background: '多个服务号同时运营，缺乏统一的内容管理与自动化触达能力。',
+      challenge: '需要保障消息发送效率并确保客服知识库一致。',
+      solution: [
+        '搭建统一内容/素材中心与自动化推送策略。',
+        '接入客服机器人，联动工单系统，实现秒级响应。',
+        '构建图文编辑与 SVG 可视化组件库，提升视觉一致性。',
+      ],
+      results: ['粉丝增长 65%', '客服均速响应 30s', '运营人员效率提升 45%'],
+    },
+  }),
+  composeCase({
+    slug: 'city-service-app',
+    title: '城市生活服务 APP',
+    description: '以 Flutter 打造统一界面规范，覆盖生活缴费、预约、活动报名等场景。',
+    category: 'app',
+    tags: ['Flutter', '多端适配', '推送'],
+    stats: { label: '2023年交付', value: '月活 80 万' },
+    detail: {
+      client: '城服通',
+      industry: '公共服务',
+      services: 'APP 定制开发',
+      year: '2023年',
+      background: '原有 APP 体验割裂，无法快速响应新业务需求。',
+      challenge: '需要统一多端 UI 规范，并保证离线、消息推送等体验。',
+      solution: [
+        '基于 Flutter 构建组件库，统一交互与视觉体验。',
+        '实现离线缓存、消息推送与埋点体系，保障稳定性。',
+        '引入灰度发布与 A/B 测试，快速验证新功能。',
+      ],
+      results: ['月活跃用户 80 万', '服务满意度 4.8/5', '需求响应速度提升 40%'],
+    },
+  }),
+  composeCase({
+    slug: 'brand-mini-game',
+    title: '品牌互动小游戏矩阵',
+    description: '打造轻量小游戏与 IP 活动，支持多人联机与排行榜玩法。',
+    category: 'game',
+    tags: ['小游戏', '多人联机', '品牌营销'],
+    stats: { label: '2024年交付', value: '互动转化 3.5 倍' },
+    detail: {
+      client: 'HYPE STUDIO',
+      industry: '体育潮玩',
+      services: '小游戏开发',
+      year: '2024年',
+      background: '品牌需要在大型赛事期间提升年轻用户互动率。',
+      challenge: '需在短时间内交付多款玩法，并保障活动期间的并发与监控。',
+      solution: [
+        '构建可复用的小游戏引擎，支持关卡、排行榜、社交分享组件。',
+        '部署多节点服务，保障峰值期间的并发体验。',
+        '沉淀用户成长与积分兑换体系，延长玩法生命周期。',
+      ],
+      results: ['单场次互动 180 万+', '新增注册 42%', '线索转化效率提升 3.5 倍'],
+    },
+  }),
+  composeCase({
+    slug: 'energy-visual-cockpit',
+    title: '能源集团可视化驾驶舱',
+    description: '搭建能源运营中心，实时呈现产线、能耗与安全指标。',
+    category: 'bigscreen',
+    tags: ['ECharts', 'Three.js', 'Kubernetes'],
+    stats: { label: '2024年交付', value: '90% 指标秒级更新' },
+    detail: {
+      client: '宏源能源',
+      industry: '能源化工',
+      services: '大屏可视化',
+      year: '2024年',
+      background: '需要实时掌握油气产线数据，支持指挥调度与安全预警。',
+      challenge: '多地数据中心接入，需保证高并发与高可用。',
+      solution: [
+        '构建数据中台，统一采集 SCADA/IoT/ERP 指标。',
+        '基于 ECharts + Three.js 呈现动态地理态势与指标联动。',
+        '部署 Kubernetes + 灰度发布，保障 7x24 稳定性。',
+      ],
+      results: ['指标刷新延迟降至 5 秒', '安全预警提前量 +30%', '调度效率提升 40%'],
+    },
+  }),
+  composeCase({
     slug: 'smart-property',
     title: '智慧物业中枢系统',
     description: '统一 IoT 设备、工单、能耗与客服流程，打造一体化物业驾驶舱。',
     category: 'system',
-    badge: '大屏/系统',
-    gradient: 'from-emerald-500 to-green-600',
-    icon: 'lucide:panel-top',
     tags: ['Vue3', 'Django', 'IoT'],
     stats: { label: '2023年交付', value: '50+ 项目落地' },
     detail: {
@@ -363,57 +461,7 @@ export const caseStudies = [
       ],
       results: ['物业效率提升 55%', '故障响应缩短 40%', '业主满意度提升 22%'],
     },
-  },
-  {
-    slug: 'b2b-cross-border',
-    title: '跨境 B2B 交易平台',
-    description: '支持多币种、多角色、多仓配的跨境采购平台，实现千人千价。',
-    category: 'ecommerce',
-    badge: '跨境电商',
-    gradient: 'from-amber-500 to-orange-600',
-    icon: 'lucide:shopping-cart',
-    tags: ['Java', 'Spring Boot', 'ElasticSearch'],
-    stats: { label: '2022年交付', value: '5,000W+ 交易额' },
-    detail: {
-      client: '汇联供应链',
-      industry: '制造业',
-      services: '电商系统',
-      year: '2022年',
-      background: '传统外贸流程复杂，难以支撑多地区采购与金融结算。',
-      challenge: '多角色权限、多币种结算与供应链协同要求高。',
-      solution: [
-        '构建多租户架构与差异化价目体系，实现千人千价。',
-        '打通仓储、物流、关务与金融服务，保障跨境履约。',
-        '引入风控与信用评级，确保大额交易安全。',
-      ],
-      results: ['上线半年交易额破 5000 万', '供应链周转效率提升 41%'],
-    },
-  },
-  {
-    slug: 'immersive-screen',
-    title: '能源集团可视化大屏',
-    description: '搭建能源运营中心，实时呈现生产、能耗与安全指标。',
-    category: 'system',
-    badge: '大屏/系统',
-    gradient: 'from-violet-500 to-purple-600',
-    icon: 'lucide:activity',
-    tags: ['ECharts', 'Three.js', 'Kubernetes'],
-    stats: { label: '2024年交付', value: '90% 指标秒级更新' },
-    detail: {
-      client: '宏源能源',
-      industry: '能源化工',
-      services: '大屏可视化',
-      year: '2024年',
-      background: '需要实时掌握油气产线数据，支持指挥调度与安全预警。',
-      challenge: '多地数据中心接入，需保证高并发与高可用。',
-      solution: [
-        '构建数据中台，统一采集 SCADA/IoT/ERP 指标。',
-        '基于 ECharts + Three.js 呈现动态地理态势与指标联动。',
-        '部署 Kubernetes + 灰度发布，保障 7x24 稳定性。',
-      ],
-      results: ['指标刷新延迟降至 5s', '安全预警提前量+30%', '指挥调度效率提升 40%'],
-    },
-  },
+  }),
 ]
 
 export const aboutStats = [
