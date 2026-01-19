@@ -1,7 +1,9 @@
-<html lang="zh-CN" class="scroll-smooth"><head>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例展示 - 易诚科技</title>
+    <title>案例展示 - 易诚无忧</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -14,7 +16,7 @@
                     },
                     colors: {
                         slate: {
-                            850: '#1e293b', 
+                            850: '#1e293b',
                         }
                     },
                     backgroundImage: {
@@ -29,24 +31,27 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f8fafc;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-        
+
         /* Subtle grid background - Darkened for light mode visibility */
         .bg-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         }
-        
+
         /* Glass morphism utilities - Light Mode */
         .glass {
             background: rgba(255, 255, 255, 0.7);
@@ -54,7 +59,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
         }
-        
+
         .glass-hover:hover {
             background: rgba(255, 255, 255, 0.9);
             border-color: rgba(99, 102, 241, 0.1);
@@ -63,11 +68,12 @@
         }
 
         /* Custom Checkbox */
-        .custom-checkbox input:checked + div {
+        .custom-checkbox input:checked+div {
             background-color: #6366f1;
             border-color: #6366f1;
         }
-        .custom-checkbox input:checked + div svg {
+
+        .custom-checkbox input:checked+div svg {
             display: block;
         }
 
@@ -75,6 +81,7 @@
         .filter-btn {
             transition: all 0.3s ease;
         }
+
         .filter-btn.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -85,17 +92,21 @@
         .case-card {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .case-card:hover {
             transform: translateY(-8px) scale(1.02);
         }
+
         .case-card:hover .case-overlay {
             opacity: 1;
         }
+
         .case-overlay {
             transition: opacity 0.3s ease;
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
 
     <!-- Navbar -->
@@ -103,9 +114,9 @@
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="24" data-height="24"></span>
-                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚科技</span>
+                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚无忧</span>
             </div>
-            
+
             <div class="hidden md:flex items-center gap-8 text-sm font-normal text-slate-500">
                 <a href="index.html" class="hover:text-indigo-600 transition-colors duration-200">首页</a>
                 <a href="services.html" class="hover:text-indigo-600 transition-colors duration-200">服务</a>
@@ -114,11 +125,12 @@
                 <a href="contact.html" class="hover:text-indigo-600 transition-colors duration-200">联系</a>
             </div>
 
-            <a href="tel:400-123-4567" class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
+            <a href="tel:17628058338"
+                class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
                 <span>立即咨询</span>
                 <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
             </a>
-            
+
             <!-- Mobile Menu Icon -->
             <button class="md:hidden text-slate-500 hover:text-slate-800">
                 <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
@@ -130,12 +142,16 @@
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <!-- Background Effects -->
         <div class="absolute inset-0 bg-grid pointer-events-none"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none">
+        </div>
 
         <div class="relative max-w-7xl mx-auto px-6 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8">
                 <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                 </span>
                 <span class="text-xs font-medium text-indigo-600 tracking-wide uppercase">成功案例</span>
@@ -177,19 +193,29 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex flex-wrap gap-3">
-                    <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all" data-filter="all">
+                    <button
+                        class="filter-btn active px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all"
+                        data-filter="all">
                         全部案例
                     </button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all" data-filter="website">
+                    <button
+                        class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all"
+                        data-filter="website">
                         网站建设
                     </button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all" data-filter="miniprogram">
+                    <button
+                        class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all"
+                        data-filter="miniprogram">
                         小程序开发
                     </button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all" data-filter="ecommerce">
+                    <button
+                        class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all"
+                        data-filter="ecommerce">
                         电商系统
                     </button>
-                    <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all" data-filter="system">
+                    <button
+                        class="filter-btn px-4 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white hover:border-indigo-300 transition-all"
+                        data-filter="system">
                         管理系统
                     </button>
                 </div>
@@ -204,20 +230,23 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cases-grid">
-                
+
                 <!-- Case 1 - Website -->
                 <div class="case-card glass glass-hover rounded-2xl overflow-hidden group" data-category="website">
                     <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 overflow-hidden">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:monitor" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <a href="portfolio-details.html" class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <a href="portfolio-details.html"
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </a>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">网站建设</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">网站建设</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -244,13 +273,16 @@
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:smartphone" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <button class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <button
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </button>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">小程序</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">小程序</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -277,13 +309,16 @@
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:shopping-cart" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <button class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <button
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </button>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">电商系统</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">电商系统</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -310,13 +345,16 @@
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:server" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <button class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <button
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </button>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">管理系统</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">管理系统</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -343,13 +381,16 @@
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:globe" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <button class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <button
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </button>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">网站建设</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">网站建设</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -376,13 +417,16 @@
                         <div class="absolute inset-0 flex items-center justify-center">
                             <span class="iconify text-white/20" data-icon="lucide:qrcode" data-width="80"></span>
                         </div>
-                        <div class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
-                            <button class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
+                        <div
+                            class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0">
+                            <button
+                                class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
                                 查看详情
                             </button>
                         </div>
                         <div class="absolute top-4 right-4">
-                            <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">小程序</span>
+                            <span
+                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">小程序</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -404,24 +448,31 @@
                 </div>
 
                 <!-- More cases can be added here... -->
-                
+
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-20 mx-6">
-        <div class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
-            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-            
+        <div
+            class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
+            <div
+                class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none">
+            </div>
+
             <div class="relative z-10">
                 <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">有项目想法？</h2>
                 <p class="text-slate-300 mb-8 max-w-xl mx-auto font-light">让我们一起将您的创意变为现实。立即联系我们，获取免费的项目咨询和报价。</p>
-                
+
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">免费咨询</button>
-                    <button class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
+                    <button
+                        class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">免费咨询</button>
+                    <button
+                        class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
                         下载案例册
                     </button>
                 </div>
@@ -436,13 +487,13 @@
                 <div class="col-span-2 md:col-span-1">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="20"></span>
-                        <span class="text-slate-900 font-semibold tracking-tighter">易诚科技</span>
+                        <span class="text-slate-900 font-semibold tracking-tighter">易诚无忧</span>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed">
                         致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
                     </p>
                 </div>
-                
+
                 <div>
                     <h4 class="text-slate-900 font-medium text-sm mb-4">服务项目</h4>
                     <ul class="space-y-2 text-xs text-slate-500">
@@ -472,13 +523,14 @@
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="iconify" data-icon="lucide:phone" data-width="14"></span>
-                            400-123-4567
+                            17628058338
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
                             成都市龙泉驿区西河大道
                         </li>
-                        <li class="flex items-center gap-2 cursor-pointer hover:text-emerald-600 transition-colors" onclick="showWeChatQR()">
+                        <li class="flex items-center gap-2 cursor-pointer hover:text-emerald-600 transition-colors"
+                            onclick="showWeChatQR()">
                             <span class="iconify" data-icon="lucide:message-circle" data-width="14"></span>
                             微信客服
                         </li>
@@ -487,11 +539,14 @@
             </div>
 
             <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
+                <p class="text-xs text-slate-400">© 2023 易诚无忧. All rights reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:github" data-width="16"></span></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="16"></span></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                            data-icon="lucide:github" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                            data-icon="lucide:twitter" data-width="16"></span></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                            data-icon="lucide:linkedin" data-width="16"></span></a>
                 </div>
             </div>
         </div>
@@ -503,22 +558,25 @@
             <button onclick="hideWeChatQR()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
                 <span class="iconify" data-icon="lucide:x" data-width="24"></span>
             </button>
-            
+
             <div class="text-center">
-                <div class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                <div
+                    class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
                     <div class="bg-white p-4 rounded-lg">
                         <span class="iconify text-emerald-500" data-icon="lucide:qr-code" data-width="120"></span>
                     </div>
                 </div>
-                
+
                 <h3 class="text-xl font-semibold text-slate-900 mb-2">微信客服</h3>
                 <p class="text-sm text-slate-500 mb-4">扫码添加客服微信</p>
-                
+
                 <div class="flex gap-2 justify-center">
-                    <button onclick="saveQRCode()" class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
+                    <button onclick="saveQRCode()"
+                        class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
                         保存二维码
                     </button>
-                    <button onclick="hideWeChatQR()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
+                    <button onclick="hideWeChatQR()"
+                        class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
                         关闭
                     </button>
                 </div>
@@ -528,13 +586,13 @@
 
     <script>
         // Filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const caseCards = document.querySelectorAll('.case-card');
             const caseCount = document.getElementById('case-count');
 
             filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     // Add active class to clicked button
@@ -592,25 +650,25 @@
             canvas.width = 300;
             canvas.height = 300;
             const ctx = canvas.getContext('2d');
-            
+
             // Draw background
             ctx.fillStyle = '#10b981';
             ctx.fillRect(0, 0, 300, 300);
-            
+
             // Draw white square
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(50, 50, 200, 200);
-            
+
             // Draw QR code pattern (simplified)
             ctx.fillStyle = '#000000';
-            for(let i = 0; i < 8; i++) {
-                for(let j = 0; j < 8; j++) {
-                    if(Math.random() > 0.5) {
+            for (let i = 0; i < 8; i++) {
+                for (let j = 0; j < 8; j++) {
+                    if (Math.random() > 0.5) {
                         ctx.fillRect(60 + i * 20, 60 + j * 20, 15, 15);
                     }
                 }
             }
-            
+
             // Download image
             const link = document.createElement('a');
             link.download = 'yicheng-tech-wechat.jpg';
@@ -619,15 +677,15 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('wechatModal').addEventListener('click', function(e) {
+        document.getElementById('wechatModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 hideWeChatQR();
             }
         });
     </script>
 
-<!--Start of Tawk.to Script-->
-<script type=text/javascript>
+    <!--Start of Tawk.to Script-->
+    <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
@@ -638,9 +696,9 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
-<script type=text/javascript>
+    <!--End of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
+    <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
@@ -651,8 +709,10 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-</body></html>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
 <!--Start of Tawk.to Script-->
 <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

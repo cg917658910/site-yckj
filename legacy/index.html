@@ -1,7 +1,9 @@
-<html lang="zh-CN" class="scroll-smooth"><head>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>易诚科技</title>
+    <title>易诚无忧</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -14,7 +16,7 @@
                     },
                     colors: {
                         slate: {
-                            850: '#1e293b', 
+                            850: '#1e293b',
                         }
                     },
                     backgroundImage: {
@@ -29,24 +31,27 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f8fafc;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-        
+
         /* Subtle grid background - Darkened for light mode visibility */
         .bg-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         }
-        
+
         /* Glass morphism utilities - Light Mode */
         .glass {
             background: rgba(255, 255, 255, 0.7);
@@ -54,7 +59,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
         }
-        
+
         .glass-hover:hover {
             background: rgba(255, 255, 255, 0.9);
             border-color: rgba(99, 102, 241, 0.1);
@@ -63,15 +68,17 @@
         }
 
         /* Custom Checkbox */
-        .custom-checkbox input:checked + div {
+        .custom-checkbox input:checked+div {
             background-color: #6366f1;
             border-color: #6366f1;
         }
-        .custom-checkbox input:checked + div svg {
+
+        .custom-checkbox input:checked+div svg {
             display: block;
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
 
     <!-- Navbar -->
@@ -79,9 +86,9 @@
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="24" data-height="24"></span>
-                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚科技</span>
+                <span class="text-slate-800 font-semibold tracking-tighter text-lg">易诚无忧</span>
             </div>
-            
+
             <div class="hidden md:flex items-center gap-8 text-sm font-normal text-slate-500">
                 <a href="index.html" class="text-indigo-600 font-medium">首页</a>
                 <a href="services.html" class="hover:text-indigo-600 transition-colors duration-200">服务</a>
@@ -90,11 +97,12 @@
                 <a href="contact.html" class="hover:text-indigo-600 transition-colors duration-200">联系</a>
             </div>
 
-            <a href="tel:400-123-4567" class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
+            <a href="tel:17628058338"
+                class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors duration-200 shadow-md shadow-slate-200">
                 <span>立即咨询</span>
                 <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
             </a>
-            
+
             <!-- Mobile Menu Icon -->
             <button class="md:hidden text-slate-500 hover:text-slate-800">
                 <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
@@ -106,12 +114,16 @@
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <!-- Background Effects -->
         <div class="absolute inset-0 bg-grid pointer-events-none"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none">
+        </div>
 
         <div class="relative max-w-7xl mx-auto px-6 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8 animate-fade-in-up">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-100 bg-indigo-50/50 backdrop-blur-sm mb-8 animate-fade-in-up">
                 <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                 </span>
                 <span class="text-xs font-medium text-indigo-600 tracking-wide uppercase">诚信铸就品质</span>
@@ -127,11 +139,14 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="contact.html" class="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-500 hover:-translate-y-0.5 shadow-lg shadow-indigo-200 transition-all duration-200 flex items-center justify-center gap-2 group">
+                <a href="contact.html"
+                    class="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-500 hover:-translate-y-0.5 shadow-lg shadow-indigo-200 transition-all duration-200 flex items-center justify-center gap-2 group">
                     启动项目
-                    <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:chevron-right" data-width="16"></span>
+                    <span class="iconify group-hover:translate-x-1 transition-transform"
+                        data-icon="lucide:chevron-right" data-width="16"></span>
                 </a>
-                <a href="portfolio.html" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-200 text-slate-600 font-medium text-sm rounded-lg hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 shadow-sm">
+                <a href="portfolio.html"
+                    class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-200 text-slate-600 font-medium text-sm rounded-lg hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 shadow-sm">
                     查看案例
                 </a>
             </div>
@@ -139,7 +154,8 @@
             <!-- Tech Stack Marquee (Static Representation) -->
             <div class="mt-20 pt-10 border-t border-slate-200/60">
                 <p class="text-xs text-slate-400 mb-6 uppercase tracking-widest font-medium">Core Technologies</p>
-                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 hover:opacity-100 transition-all duration-500 text-slate-800">
+                <div
+                    class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 hover:opacity-100 transition-all duration-500 text-slate-800">
                     <span class="iconify" data-icon="lucide:file-code-2" data-width="32"></span>
                     <span class="iconify" data-icon="lucide:database" data-width="32"></span>
                     <span class="iconify" data-icon="lucide:smartphone" data-width="32"></span>
@@ -159,16 +175,19 @@
                     <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-4">核心服务领域</h2>
                     <p class="text-slate-500 font-light max-w-md">我们提供全周期的软件开发服务，从需求分析到最终交付，确保每一个像素都精准到位。</p>
                 </div>
-                <a href="#" class="text-indigo-600 text-sm hover:text-indigo-500 transition-colors flex items-center gap-1 group font-medium">
+                <a href="#"
+                    class="text-indigo-600 text-sm hover:text-indigo-500 transition-colors flex items-center gap-1 group font-medium">
                     查看所有服务
-                    <span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
+                    <span class="iconify group-hover:translate-x-0.5 transition-transform"
+                        data-icon="lucide:arrow-right" data-width="16"></span>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Card 1 -->
                 <div class="glass glass-hover rounded-2xl p-8 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-6 text-indigo-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-6 text-indigo-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
                         <span class="iconify" data-icon="lucide:app-window" data-width="24" stroke-width="1.5"></span>
                     </div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">小程序开发</h3>
@@ -187,8 +206,10 @@
 
                 <!-- Card 2 -->
                 <div class="glass glass-hover rounded-2xl p-8 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center mb-6 text-teal-500 group-hover:bg-teal-500 group-hover:text-white group-hover:border-teal-500 transition-all shadow-sm">
-                        <span class="iconify" data-icon="lucide:monitor-smartphone" data-width="24" stroke-width="1.5"></span>
+                    <div
+                        class="w-12 h-12 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center mb-6 text-teal-500 group-hover:bg-teal-500 group-hover:text-white group-hover:border-teal-500 transition-all shadow-sm">
+                        <span class="iconify" data-icon="lucide:monitor-smartphone" data-width="24"
+                            stroke-width="1.5"></span>
                     </div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">高端网站定制</h3>
                     <p class="text-sm text-slate-500 font-light leading-relaxed mb-6">
@@ -199,14 +220,16 @@
                             <span class="iconify text-teal-500" data-icon="lucide:check" data-width="12"></span> 响应式设计
                         </li>
                         <li class="flex items-center gap-2 text-xs text-slate-500">
-                            <span class="iconify text-teal-500" data-icon="lucide:check" data-width="12"></span> SEO 优化架构
+                            <span class="iconify text-teal-500" data-icon="lucide:check" data-width="12"></span> SEO
+                            优化架构
                         </li>
                     </ul>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="glass glass-hover rounded-2xl p-8 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center mb-6 text-rose-500 group-hover:bg-rose-500 group-hover:text-white group-hover:border-rose-500 transition-all shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center mb-6 text-rose-500 group-hover:bg-rose-500 group-hover:text-white group-hover:border-rose-500 transition-all shadow-sm">
                         <span class="iconify" data-icon="lucide:shopping-bag" data-width="24" stroke-width="1.5"></span>
                     </div>
                     <h3 class="text-xl font-medium text-slate-900 mb-3">商城与系统开发</h3>
@@ -230,19 +253,24 @@
     <section class="py-24 border-y border-slate-200/60 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
+
                 <!-- Left Content -->
                 <div class="space-y-8">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">不仅仅是代码<br><span class="text-slate-400">是商业逻辑的完美实现</span></h2>
-                    <p class="text-slate-500 font-light">我们深知技术是为了业务服务的。在编写第一行代码之前，我们会深入理解您的商业模式，确保最终交付物能够切实解决问题并带来增长。</p>
-                    
+                    <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">不仅仅是代码<br><span
+                            class="text-slate-400">是商业逻辑的完美实现</span></h2>
+                    <p class="text-slate-500 font-light">我们深知技术是为了业务服务的。在编写第一行代码之前，我们会深入理解您的商业模式，确保最终交付物能够切实解决问题并带来增长。
+                    </p>
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <!-- Custom Toggle Item -->
-                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
                             <div class="mt-0.5">
                                 <label class="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" checked="" class="sr-only peer" disabled="">
-                                    <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-indigo-500"></div>
+                                    <div
+                                        class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-indigo-500">
+                                    </div>
                                 </label>
                             </div>
                             <div>
@@ -252,11 +280,17 @@
                         </div>
 
                         <!-- Custom Checkbox Item -->
-                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
                             <label class="custom-checkbox flex items-center cursor-pointer mt-0.5">
                                 <input type="checkbox" checked="" class="hidden" disabled="">
-                                <div class="w-5 h-5 border border-slate-300 rounded flex items-center justify-center bg-transparent transition-colors">
-                                    <svg class="w-3 h-3 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <div
+                                    class="w-5 h-5 border border-slate-300 rounded flex items-center justify-center bg-transparent transition-colors">
+                                    <svg class="w-3 h-3 text-white hidden" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
                                 </div>
                             </label>
                             <div>
@@ -270,7 +304,8 @@
                 <!-- Right Graphic (Abstract UI Representation) -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-60"></div>
-                    <div class="relative bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-200/50">
+                    <div
+                        class="relative bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-200/50">
                         <div class="h-10 border-b border-slate-100 bg-slate-50/50 flex items-center px-4 gap-2">
                             <div class="w-3 h-3 rounded-full bg-slate-300"></div>
                             <div class="w-3 h-3 rounded-full bg-slate-200"></div>
@@ -285,7 +320,8 @@
                             </div>
                             <div class="h-4 w-3/4 rounded bg-slate-100"></div>
                             <div class="h-4 w-1/2 rounded bg-slate-100"></div>
-                            <div class="h-32 w-full rounded-lg bg-gradient-to-tr from-indigo-50 to-cyan-50 border border-slate-100 mt-6 flex items-center justify-center">
+                            <div
+                                class="h-32 w-full rounded-lg bg-gradient-to-tr from-indigo-50 to-cyan-50 border border-slate-100 mt-6 flex items-center justify-center">
                                 <span class="text-xs font-mono text-indigo-400">System Architecture Visualization</span>
                             </div>
                         </div>
@@ -304,12 +340,15 @@
 
         <div class="relative">
             <!-- Connecting Line -->
-            <div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent hidden md:block -translate-y-1/2 z-0"></div>
+            <div
+                class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent hidden md:block -translate-y-1/2 z-0">
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
                 <!-- Step 1 -->
                 <div class="group text-center">
-                    <div class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                    <div
+                        class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
                         <span class="iconify" data-icon="lucide:messages-square" data-width="20"></span>
                     </div>
                     <h3 class="text-base font-medium text-slate-900 mb-2">需求分析</h3>
@@ -318,7 +357,8 @@
 
                 <!-- Step 2 -->
                 <div class="group text-center">
-                    <div class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                    <div
+                        class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
                         <span class="iconify" data-icon="lucide:pencil-ruler" data-width="20"></span>
                     </div>
                     <h3 class="text-base font-medium text-slate-900 mb-2">交互设计</h3>
@@ -327,7 +367,8 @@
 
                 <!-- Step 3 -->
                 <div class="group text-center">
-                    <div class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                    <div
+                        class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
                         <span class="iconify" data-icon="lucide:code-2" data-width="20"></span>
                     </div>
                     <h3 class="text-base font-medium text-slate-900 mb-2">程序开发</h3>
@@ -336,7 +377,8 @@
 
                 <!-- Step 4 -->
                 <div class="group text-center">
-                    <div class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
+                    <div
+                        class="w-12 h-12 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-indigo-500 group-hover:border-indigo-500 transition-all duration-300 mb-4 shadow-[0_0_0_8px_rgb(248,250,252)]">
                         <span class="iconify" data-icon="lucide:rocket" data-width="20"></span>
                     </div>
                     <h3 class="text-base font-medium text-slate-900 mb-2">测试上线</h3>
@@ -348,17 +390,24 @@
 
     <!-- CTA Section -->
     <section class="py-20 mx-6">
-        <div class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
-            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-            
+        <div
+            class="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-200/50">
+            <div
+                class="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none">
+            </div>
+
             <div class="relative z-10">
                 <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">准备好开始了吗？</h2>
                 <p class="text-slate-300 mb-8 max-w-xl mx-auto font-light">无论您是需要一个小程序，还是一个复杂的企业管理系统，我们都随时待命。</p>
-                
+
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">立即咨询报价</button>
-                    <button class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
+                    <button
+                        class="px-8 py-3 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">立即咨询报价</button>
+                    <button
+                        class="px-8 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors">
                         联系客服
                     </button>
                 </div>
@@ -373,13 +422,13 @@
                 <div class="col-span-2 md:col-span-1">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="iconify text-indigo-500" data-icon="lucide:cpu" data-width="20"></span>
-                        <span class="text-slate-900 font-semibold tracking-tighter">易诚科技</span>
+                        <span class="text-slate-900 font-semibold tracking-tighter">易诚无忧</span>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed">
                         致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
                     </p>
                 </div>
-                
+
                 <div>
                     <h4 class="text-slate-900 font-medium text-sm mb-4">服务项目</h4>
                     <ul class="space-y-2 text-xs text-slate-500">
@@ -403,25 +452,31 @@
                 <div>
                     <h4 class="text-slate-900 font-medium text-sm mb-4">联系方式</h4>
                     <ul class="space-y-2 text-xs text-slate-500">
-                <li class="flex items-center gap-3">
-                    <span class="iconify text-cyan-500" data-icon="lucide:mail" data-width="20"></span>
-                    <span class="text-slate-700 font-medium">contact@yicheng-tech.com</span>
-                </li>
-                <div class="flex items-center gap-3 cursor-pointer hover:text-emerald-600 transition-colors" onclick="showWeChatQR()">
-                    <span class="iconify text-emerald-500" data-icon="lucide:message-circle" data-width="20"></span>
-                    <span class="text-slate-700 font-medium">微信客服</span>
+                        <li class="flex items-center gap-3">
+                            <span class="iconify text-cyan-500" data-icon="lucide:mail" data-width="20"></span>
+                            <span class="text-slate-700 font-medium">contact@yicheng-tech.com</span>
+                        </li>
+                        <div class="flex items-center gap-3 cursor-pointer hover:text-emerald-600 transition-colors"
+                            onclick="showWeChatQR()">
+                            <span class="iconify text-emerald-500" data-icon="lucide:message-circle"
+                                data-width="20"></span>
+                            <span class="text-slate-700 font-medium">微信客服</span>
+                        </div>
                 </div>
-            </div>
 
-            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:github" data-width="16"></span></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="16"></span></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify" data-icon="lucide:linkedin" data-width="16"></span></a>
+                <div
+                    class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-slate-400">© 2023 易诚无忧. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                                data-icon="lucide:github" data-width="16"></span></a>
+                        <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                                data-icon="lucide:twitter" data-width="16"></span></a>
+                        <a href="#" class="text-slate-400 hover:text-slate-800 transition-colors"><span class="iconify"
+                                data-icon="lucide:linkedin" data-width="16"></span></a>
+                    </div>
                 </div>
             </div>
-        </div>
     </footer>
 
     <!-- WeChat QR Modal -->
@@ -430,22 +485,25 @@
             <button onclick="hideWeChatQR()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
                 <span class="iconify" data-icon="lucide:x" data-width="24"></span>
             </button>
-            
+
             <div class="text-center">
-                <div class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                <div
+                    class="w-48 h-48 mx-auto bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
                     <div class="bg-white p-4 rounded-lg">
                         <span class="iconify text-emerald-500" data-icon="lucide:qr-code" data-width="120"></span>
                     </div>
                 </div>
-                
+
                 <h3 class="text-xl font-semibold text-slate-900 mb-2">微信客服</h3>
                 <p class="text-sm text-slate-500 mb-4">扫码添加客服微信</p>
-                
+
                 <div class="flex gap-2 justify-center">
-                    <button onclick="saveQRCode()" class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
+                    <button onclick="saveQRCode()"
+                        class="px-4 py-2 bg-emerald-500 text-white text-sm rounded-lg hover:bg-emerald-600 transition-colors">
                         保存二维码
                     </button>
-                    <button onclick="hideWeChatQR()" class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
+                    <button onclick="hideWeChatQR()"
+                        class="px-4 py-2 bg-slate-200 text-slate-700 text-sm rounded-lg hover:bg-slate-300 transition-colors">
                         关闭
                     </button>
                 </div>
@@ -475,25 +533,25 @@
             canvas.width = 300;
             canvas.height = 300;
             const ctx = canvas.getContext('2d');
-            
+
             // Draw background
             ctx.fillStyle = '#10b981';
             ctx.fillRect(0, 0, 300, 300);
-            
+
             // Draw white square
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(50, 50, 200, 200);
-            
+
             // Draw QR code pattern (simplified)
             ctx.fillStyle = '#000000';
-            for(let i = 0; i < 8; i++) {
-                for(let j = 0; j < 8; j++) {
-                    if(Math.random() > 0.5) {
+            for (let i = 0; i < 8; i++) {
+                for (let j = 0; j < 8; j++) {
+                    if (Math.random() > 0.5) {
                         ctx.fillRect(60 + i * 20, 60 + j * 20, 15, 15);
                     }
                 }
             }
-            
+
             // Download image
             const link = document.createElement('a');
             link.download = 'yicheng-tech-wechat.jpg';
@@ -502,15 +560,15 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('wechatModal').addEventListener('click', function(e) {
+        document.getElementById('wechatModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 hideWeChatQR();
             }
         });
     </script>
 
-<!--Start of Tawk.to Script-->
-<script type=text/javascript>
+    <!--Start of Tawk.to Script-->
+    <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
@@ -521,9 +579,9 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
-<script type=text/javascript>
+    <!--End of Tawk.to Script-->
+    <!--Start of Tawk.to Script-->
+    <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement(script),s0=document.getElementsByTagName(script)[0];
@@ -534,8 +592,10 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-</body></html>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
 <!--Start of Tawk.to Script-->
 <script type=text/javascript>
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const HomeView = () => import('../pages/HomeView.vue')
 const ServicesView = () => import('../pages/ServicesView.vue')
@@ -7,7 +7,7 @@ const PortfolioDetailView = () => import('../pages/PortfolioDetailView.vue')
 const AboutView = () => import('../pages/AboutView.vue')
 const ContactView = () => import('../pages/ContactView.vue')
 
-const TITLE_SUFFIX = '易诚科技 · 数字化解决方案伙伴'
+const TITLE_SUFFIX = '易诚无忧 · 数字化解决方案伙伴'
 
 const routes = [
   { path: '/', component: HomeView, meta: { title: `首页 | ${TITLE_SUFFIX}` } },
@@ -16,6 +16,7 @@ const routes = [
   {
     path: '/portfolio/:slug',
     component: PortfolioDetailView,
+    props: true,
     meta: { title: `案例详情 | ${TITLE_SUFFIX}` },
   },
   { path: '/about', component: AboutView, meta: { title: `关于我们 | ${TITLE_SUFFIX}` } },
@@ -23,7 +24,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   scrollBehavior() {
     return { top: 0 }

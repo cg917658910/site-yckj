@@ -1,8 +1,9 @@
 <script setup>
-import { reactive, ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import { reactive, ref } from 'vue'
 
-import { contactMethods, contactInfo, officeDirections, faqList } from '../data/site'
+import { contactInfo, contactMethods, faqList, officeDirections } from '../data/site'
+import wechatQr from '../assets/img/wx.jpg'
 
 const form = reactive({
   name: '',
@@ -16,6 +17,7 @@ const form = reactive({
 
 const submitting = ref(false)
 const activeFaq = ref(null)
+const showWechatModal = ref(false)
 
 const handleSubmit = () => {
   submitting.value = true
@@ -76,7 +78,19 @@ const handleSubmit = () => {
             </div>
             <h3 class="text-xl font-semibold text-slate-900 mb-2">{{ method.title }}</h3>
             <p class="text-sm text-slate-500 mb-4">{{ method.description }}</p>
-            <a :href="method.link" class="text-indigo-600 font-medium hover:text-indigo-500 transition-colors">
+            <button
+              v-if="method.title === '微信客服'"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors"
+              @click="showWechatModal = true"
+            >
+              查看二维码
+              <Icon icon="lucide:qr-code" width="16" class="text-white/80" />
+            </button>
+            <a
+              v-else
+              :href="method.link"
+              class="text-indigo-600 font-medium hover:text-indigo-500 transition-colors"
+            >
               {{ method.value }}
             </a>
           </article>
@@ -131,7 +145,7 @@ const handleSubmit = () => {
 
             <label class="flex items-center gap-3 text-sm text-slate-500">
               <input v-model="form.agree" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
-              我同意易诚科技的隐私政策和服务条款
+               我同意易诚科技的隐私政策和服务条款
             </label>
 
             <button
@@ -187,5 +201,34 @@ const handleSubmit = () => {
         </div>
       </div>
     </section>
+
+    <transition name="fade">
+      <div v-if="showWechatModal" class="fixed inset-0 z-50 flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" @click="showWechatModal = false"></div>
+        <div class="relative bg-white rounded-2xl p-6 shadow-2xl w-full max-w-sm text-center space-y-5">
+          <div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-1">微信客服</h3>
+            <p class="text-sm text-slate-500">长按识别或保存二维码添加客服</p>
+          </div>
+          <img :src="wechatQr" alt="微信客服二维码" class="w-full rounded-xl border border-slate-200 object-cover" />
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button
+              class="flex-1 px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors"
+              @click="showWechatModal = false"
+            >
+              关闭
+            </button>
+            <a
+              :href="wechatQr"
+              download="wechat-qr.jpg"
+              class="flex-1 px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-colors flex items-center justify-center gap-2"
+            >
+              <Icon icon="lucide:download" width="16" />
+              保存二维码
+            </a>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>

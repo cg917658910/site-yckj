@@ -1,9 +1,9 @@
 <script setup>
+import { Icon } from '@iconify/vue'
 import { ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { Icon } from '@iconify/vue'
 
-import { navigationLinks, contactInfo } from '../../data/site'
+import { contactInfo, navigationLinks } from '../../data/site'
 
 const isMenuOpen = ref(false)
 const route = useRoute()
@@ -21,7 +21,7 @@ watch(
     <div class="section-container h-16 flex items-center justify-between">
       <RouterLink to="/" class="flex items-center gap-2">
         <Icon icon="lucide:cpu" class="text-indigo-500" width="24" />
-        <span class="text-slate-800 font-semibold tracking-tight">易诚科技</span>
+        <span class="text-slate-800 font-semibold tracking-tight">易诚无忧</span>
       </RouterLink>
 
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-500">

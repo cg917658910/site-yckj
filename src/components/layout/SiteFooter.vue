@@ -1,6 +1,6 @@
 <script setup>
-import { Icon } from '@iconify/vue'
-import { footerLinks, contactInfo } from '../../data/site'
+import { Icon } from '@iconify/vue';
+import { contactInfo, footerLinks } from '../../data/site';
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import { footerLinks, contactInfo } from '../../data/site'
         <div class="col-span-2 md:col-span-1">
           <div class="flex items-center gap-2 mb-4">
             <Icon icon="lucide:cpu" class="text-indigo-500" width="20" />
-            <span class="text-slate-900 font-semibold tracking-tight">易诚科技</span>
+            <span class="text-slate-900 font-semibold tracking-tight">易诚无忧</span>
           </div>
           <p class="text-xs text-slate-500 leading-relaxed">
             致力于为企业提供高品质的软件开发服务，用技术创造商业价值。
@@ -52,7 +52,7 @@ import { footerLinks, contactInfo } from '../../data/site'
       </div>
 
       <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-slate-400">© 2023 易诚科技. All rights reserved.</p>
+        <p class="text-xs text-slate-400">© 2023 易诚无忧. All rights reserved.</p>
         <div class="flex gap-4 text-slate-400">
           <a href="#" class="hover:text-slate-800 transition-colors">
             <Icon icon="lucide:github" width="16" />

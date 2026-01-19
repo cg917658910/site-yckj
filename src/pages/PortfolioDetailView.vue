@@ -1,18 +1,46 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
 import { Icon } from '@iconify/vue'
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
 
 import { caseStudies } from '../data/site'
 
-const route = useRoute()
-
-const currentCase = computed(() => {
-  const match = caseStudies.find((item) => item.slug === route.params.slug)
-  return match ?? caseStudies[0]
+const props = defineProps({
+  slug: {
+    type: String,
+    default: '',
+  },
 })
 
-const moreCases = computed(() => caseStudies.filter((item) => item.slug !== currentCase.value.slug).slice(0, 3))
+const slugParam = computed(() => {
+  if (props.slug) return props.slug
+})
+
+const fallbackCase =
+  caseStudies[0] ??
+  {
+    slug: 'default',
+    title: '案例即将上线',
+    description: '您访问的案例暂不可用，稍后再试或查看其他案例。',
+    gradient: 'from-slate-200 to-slate-400',
+    icon: 'lucide:layers',
+    tags: [],
+    stats: { label: '敬请期待', value: '' },
+    detail: {
+      client: '易诚科技',
+      industry: '数字服务',
+      services: '解决方案',
+      year: `${new Date().getFullYear()}年`,
+      background: '当前案例不存在或已下线，我们正在尽快补充内容。',
+      challenge: '请返回案例列表选择其他案例。',
+      solution: [],
+      results: [],
+    },
+  }
+
+const currentCase = computed(() => caseStudies.find((item) => item.slug === slugParam.value) ?? fallbackCase)
+
+const moreCases = computed(() => caseStudies.filter((item) => item.slug !== currentCase.value?.slug).slice(0, 3))
 </script>
 
 <template>
@@ -25,46 +53,46 @@ const moreCases = computed(() => caseStudies.filter((item) => item.slug !== curr
         <nav class="text-sm mb-8 text-slate-500 flex items-center gap-2">
           <RouterLink to="/portfolio" class="hover:text-indigo-600">案例</RouterLink>
           <span>/</span>
-          <span class="text-slate-800 font-medium">{{ currentCase.value.title }}</span>
+          <span class="text-slate-800 font-medium">{{ currentCase.title }}</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div class="lg:col-span-2">
             <div class="mb-8">
               <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight mb-4">
-                {{ currentCase.value.title }}
+                {{ currentCase.title }}
               </h1>
-              <p class="text-lg text-slate-500 font-light">{{ currentCase.value.description }}</p>
+              <p class="text-lg text-slate-500 font-light">{{ currentCase.description }}</p>
             </div>
 
-            <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-slate-200 mb-12" :class="`bg-gradient-to-br ${currentCase.value.gradient}`">
+            <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-slate-200 mb-12" :class="`bg-gradient-to-br ${currentCase.gradient}`">
               <div class="absolute inset-0 flex items-center justify-center">
-                <Icon :icon="currentCase.value.icon" width="120" class="text-white/20" />
+                <Icon :icon="currentCase.icon" width="120" class="text-white/20" />
               </div>
             </div>
 
             <div class="space-y-6 text-slate-600 leading-relaxed">
               <div>
                 <h2 class="text-2xl font-semibold text-slate-900 mb-3">项目背景</h2>
-                <p>{{ currentCase.value.detail.background }}</p>
+                <p>{{ currentCase.detail.background }}</p>
               </div>
 
               <div>
                 <h2 class="text-2xl font-semibold text-slate-900 mb-3">核心挑战</h2>
-                <p>{{ currentCase.value.detail.challenge }}</p>
+                <p>{{ currentCase.detail.challenge }}</p>
               </div>
 
               <div>
                 <h2 class="text-2xl font-semibold text-slate-900 mb-3">解决方案</h2>
                 <ul class="list-disc pl-5 space-y-2">
-                  <li v-for="item in currentCase.value.detail.solution" :key="item">{{ item }}</li>
+                  <li v-for="item in currentCase.detail.solution" :key="item">{{ item }}</li>
                 </ul>
               </div>
 
               <div>
                 <h2 class="text-2xl font-semibold text-slate-900 mb-3">成果展示</h2>
                 <ul class="list-disc pl-5 space-y-2">
-                  <li v-for="result in currentCase.value.detail.results" :key="result">{{ result }}</li>
+                  <li v-for="result in currentCase.detail.results" :key="result">{{ result }}</li>
                 </ul>
               </div>
             </div>
@@ -75,17 +103,17 @@ const moreCases = computed(() => caseStudies.filter((item) => item.slug !== curr
               <div class="bg-white/80 backdrop-blur-lg border border-slate-200/60 rounded-2xl p-8 space-y-6">
                 <h3 class="text-xl font-semibold text-slate-900">项目信息</h3>
                 <ul class="space-y-4 text-sm">
-                  <li class="flex justify-between"><span class="text-slate-500">客户</span><span class="font-medium text-slate-800">{{ currentCase.value.detail.client }}</span></li>
-                  <li class="flex justify-between"><span class="text-slate-500">行业</span><span class="font-medium text-slate-800">{{ currentCase.value.detail.industry }}</span></li>
-                  <li class="flex justify-between"><span class="text-slate-500">服务</span><span class="font-medium text-slate-800">{{ currentCase.value.detail.services }}</span></li>
-                  <li class="flex justify-between"><span class="text-slate-500">完成时间</span><span class="font-medium text-slate-800">{{ currentCase.value.detail.year }}</span></li>
+                  <li class="flex justify-between"><span class="text-slate-500">客户</span><span class="font-medium text-slate-800">{{ currentCase.detail.client }}</span></li>
+                  <li class="flex justify-between"><span class="text-slate-500">行业</span><span class="font-medium text-slate-800">{{ currentCase.detail.industry }}</span></li>
+                  <li class="flex justify-between"><span class="text-slate-500">服务</span><span class="font-medium text-slate-800">{{ currentCase.detail.services }}</span></li>
+                  <li class="flex justify-between"><span class="text-slate-500">完成时间</span><span class="font-medium text-slate-800">{{ currentCase.detail.year }}</span></li>
                 </ul>
 
                 <div class="h-px bg-slate-200"></div>
 
                 <h4 class="text-lg font-semibold text-slate-900">技术栈</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="tag in currentCase.value.tags" :key="tag" class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs rounded-full">{{ tag }}</span>
+                  <span v-for="tag in currentCase.tags" :key="tag" class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs rounded-full">{{ tag }}</span>
                 </div>
 
                 <RouterLink

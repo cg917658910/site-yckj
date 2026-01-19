@@ -1,6 +1,6 @@
 <script setup>
-import { computed, ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import { computed, ref } from 'vue'
 
 import { caseFilters, caseStudies, ctaBlock } from '../data/site'
 
@@ -66,8 +66,8 @@ const filteredCases = computed(() => {
             {{ filter.label }}
           </button>
         </div>
-        <div class="text-sm text-slate-500">共 <span class="font-semibold text-slate-900">{{ filteredCases.length }}</span> 个案例</div>
-      </div>
+<!--         <div class="text-sm text-slate-500">共 <span class="font-semibold text-slate-900">{{ filteredCases.length }}</span> 个案例</div>
+ -->      </div>
     </section>
 
     <section class="py-20">

@@ -1,7 +1,7 @@
 <script setup>
-import { Icon } from '@iconify/vue'
+import { Icon } from '@iconify/vue';
 
-import { aboutStats, companyStory, companyValues, teamMembers, timeline, ctaBlock } from '../data/site'
+import { aboutStats, companyStory, companyValues, ctaBlock, teamMembers, timeline } from '../data/site';
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import { aboutStats, companyStory, companyValues, teamMembers, timeline, ctaBloc
           诚信铸就<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">品质未来</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-500 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          易诚科技成立于 2015 年，是一家专注于高端网站建设、移动应用开发和企业系统定制的科技公司。我们用诚信和专业，为客户创造价值。
+          易诚无忧成立于 2015 年，是一家专注于高端网站建设、移动应用开发和企业系统定制的科技公司。我们用诚信和专业，为客户创造价值。
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">

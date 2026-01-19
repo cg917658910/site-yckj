@@ -84,9 +84,9 @@ import {
           </RouterLink>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           <article
-            v-for="service in homeServices"
+            v-for="service in homeServices.slice(0, 4)"
             :key="service.title"
             class="glass glass-hover rounded-2xl p-8 transition-all duration-300 group flex flex-col"
           >

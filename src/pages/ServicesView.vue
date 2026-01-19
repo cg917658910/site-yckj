@@ -1,23 +1,19 @@
 <script setup>
-import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import { computed, ref } from 'vue'
 
 import {
+  ctaBlock,
   serviceCategories,
-  serviceTabs,
   serviceProcessSteps,
   techStack,
-  ctaBlock,
 } from '../data/site'
 
-const tabOptions = [
-  { key: 'web', label: '网站开发' },
-  { key: 'app', label: '应用开发' },
-  { key: 'design', label: '设计服务' },
-  { key: 'consulting', label: '技术咨询' },
-]
-
-const activeTab = ref(tabOptions[0].key)
+const getCategoryImage = (filename) => new URL(`../assets/img/${filename}`, import.meta.url).href
+const activeCategory = ref(serviceCategories[0]?.title ?? '')
+const selectedCategory = computed(
+  () => serviceCategories.find((category) => category.title === activeCategory.value) ?? serviceCategories[0]
+)
 </script>
 
 <template>
@@ -89,70 +85,59 @@ const activeTab = ref(tabOptions[0].key)
     </section>
 
     <section class="py-20 border-y border-slate-200/60 bg-white">
-      <div class="section-container">
-        <div class="text-center mb-12">
-          <h2 class="section-title mb-4">详细服务内容</h2>
-          <p class="text-slate-500 font-light">深入了解我们的专业服务能力</p>
+      <div class="section-container space-y-12">
+        <div class="text-center max-w-3xl mx-auto">
+<!--           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500 mb-3">Service Lines</p>
+ -->          <h2 class="section-title mb-4">详细服务内容</h2>
+          <p class="text-slate-500 font-light">
+            深入了解我们的专业服务能力
+          </p>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-          <button
-            v-for="tab in tabOptions"
-            :key="tab.key"
-            class="tab-btn px-6 py-3 rounded-full text-sm font-medium border border-slate-200 bg-white"
-            :class="{
-              active: activeTab === tab.key,
-              'bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-lg': activeTab === tab.key,
-            }"
-            @click="activeTab = tab.key"
-          >
-            {{ tab.label }}
-          </button>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6">
-            <div class="glass rounded-2xl p-8" v-if="serviceTabs[activeTab]">
-              <h3 class="text-2xl font-semibold text-slate-900 mb-4">
-                {{ serviceTabs[activeTab].title }}
-              </h3>
-              <p class="text-slate-500 mb-6">{{ serviceTabs[activeTab].description }}</p>
-
-              <div class="space-y-4">
-                <div
-                  v-for="point in serviceTabs[activeTab].points"
-                  :key="point.title"
-                  class="flex items-start gap-3"
-                >
-                  <Icon icon="lucide:check-circle" width="20" class="text-indigo-500 mt-1" />
-                  <div>
-                    <h4 class="font-medium text-slate-900">{{ point.title }}</h4>
-                    <p class="text-sm text-slate-500">{{ point.detail }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="space-y-8">
+          <div class="flex flex-wrap justify-center gap-3">
+            <button
+              v-for="category in serviceCategories"
+              :key="category.title"
+              class="px-4 py-2 rounded-full text-sm border transition-all"
+              :class="
+                activeCategory === category.title
+                  ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg'
+                  : 'border-slate-200 text-slate-500 hover:border-indigo-200 hover:text-indigo-600'
+              "
+              @click="activeCategory = category.title"
+            >
+              {{ category.title }}
+            </button>
           </div>
 
-          <div class="relative">
-            <div class="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full opacity-60"></div>
-            <div class="relative bg-white border border-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-200/50">
-              <div class="h-10 border-b border-slate-100 bg-slate-50/50 flex items-center px-4 gap-2">
-                <div class="w-3 h-3 rounded-full bg-slate-300"></div>
-                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
-                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
-              </div>
-              <div class="p-8 space-y-4">
-                <div class="h-4 w-3/4 rounded bg-slate-100"></div>
-                <div class="h-4 w-1/2 rounded bg-slate-100"></div>
-                <div class="h-32 w-full rounded-lg bg-gradient-to-tr from-indigo-50 to-cyan-50 border border-slate-100 flex items-center justify-center">
-                  <span class="text-xs font-mono text-indigo-400">Service Architecture</span>
-                </div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="h-16 rounded bg-slate-100"></div>
-                  <div class="h-16 rounded bg-slate-100"></div>
-                  <div class="h-16 rounded bg-slate-100"></div>
-                </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="glass rounded-3xl p-8 border border-slate-200/80 bg-white/70 shadow-xl space-y-4">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold tracking-widest bg-indigo-50 text-indigo-600">
+                {{ selectedCategory.tagline }}
+              </span>
+              <h3 class="text-2xl font-semibold text-slate-900">{{ selectedCategory.title }}</h3>
+              <p class="text-slate-500 leading-relaxed">{{ selectedCategory.detailDescription }}</p>
+              <ul class="space-y-3">
+                <li
+                  v-for="item in selectedCategory.detailBullets"
+                  :key="item"
+                  class="flex items-center gap-3 text-sm text-slate-600"
+                >
+                  <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                  {{ item }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="relative h-full flex items-center justify-center">
+              <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/15 to-cyan-500/10 blur-3xl rounded-3xl"></div>
+              <div class="relative rounded-3xl border border-slate-200/80 bg-white shadow-2xl overflow-hidden w-full max-w-[520px] aspect-[4/3]">
+                <img
+                  :src="getCategoryImage(selectedCategory.image)"
+                  :alt="selectedCategory.title"
+                  class="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
