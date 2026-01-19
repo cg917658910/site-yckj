@@ -36,13 +36,13 @@ watch(
         </RouterLink>
       </nav>
 
-      <a
+      <RouterLink
+        to="/contact#contact-methods"
         class="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-colors shadow-md shadow-slate-200"
-        :href="`tel:${contactInfo.phone}`"
       >
         <span>立即咨询</span>
         <Icon icon="lucide:arrow-right" width="14" />
-      </a>
+      </RouterLink>
 
       <button class="md:hidden text-slate-500 hover:text-slate-800" @click="isMenuOpen = !isMenuOpen">
         <Icon :icon="isMenuOpen ? 'lucide:x' : 'lucide:menu'" width="24" />
@@ -61,13 +61,13 @@ watch(
           >
             {{ link.label }}
           </RouterLink>
-          <a
-            :href="`tel:${contactInfo.phone}`"
+          <RouterLink
+            to="/contact#contact-methods"
             class="flex items-center justify-center gap-2 px-4 py-3 bg-slate-900 text-white rounded-lg text-sm"
           >
             <Icon icon="lucide:phone" width="16" />
             立即咨询
-          </a>
+          </RouterLink>
         </div>
       </div>
     </transition>

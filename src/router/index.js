@@ -26,8 +26,20 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  scrollBehavior() {
-    return { top: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    // 返回上次位置（浏览器回退）
+    if (savedPosition) return savedPosition
+
+    // 如果有 hash，比如 /contact#contact-methods
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth', // 平滑滚动，可选
+      }
+    }
+
+    // 默认滚到顶部
+    return { left: 0, top: 0 }
   },
 })
 

@@ -9,6 +9,7 @@ export const navigationLinks = [
 export const contactInfo = {
   phone: '17628058338',
   email: 'contact@yicheng-tech.com',
+  kefu1:  'yx17628058338',
   address: '成都市龙泉驿区西河大道香槟城8栋一单元1703',
   workday: '周一至周五 9:00-18:00',
   weekend: '周六 10:00-16:00',
@@ -44,13 +45,13 @@ export const footerLinks = [
 ]
 
 export const homeHero = {
-  badge: '聚焦增长场景',
-  title: '服务业余领域的',
-  highlight: '数字化体验引擎',
+  badge: '诚信铸就品质',
+  title: '构建卓越的',
+  highlight: '数字化解决方案',
   description:
-    '我们专注于服务业余（Service + Leisure）赛道，涵盖创意官网、互动营销、小程序与大屏可视化，帮助品牌沉淀资产、驱动增长。',
-  primaryCta: { label: '预约方案咨询', to: '/contact' },
-  secondaryCta: { label: '下载案例册', to: '/portfolio' },
+    '专注于高端网站建设、微信小程序开发与复杂电商系统架构。我们用代码诠释创意，为企业打造具竞争力的数字化产品。',
+  primaryCta: { label: '启动项目', to: '/contact' },
+  secondaryCta: { label: '查看案例', to: '/portfolio' },
 }
 
 export const homeServices = [
@@ -460,20 +461,22 @@ export const contactMethods = [
     link: 'tel:4001234567',
   },
   {
-    title: '邮件联系',
-    description: '24 小时内回复',
-    value: 'contact@yicheng-tech.com',
-    icon: 'lucide:mail',
-    gradient: 'from-cyan-500 to-teal-600',
-    link: 'mailto:contact@yicheng-tech.com',
-  },
-  {
-    title: '微信客服',
+    title: '微信客服1',
     description: '扫码添加客服',
     value: '微信二维码',
     icon: 'lucide:message-circle',
     gradient: 'from-emerald-500 to-green-600',
     link: '/contact',
+    qr: 'wx.jpg',
+  },
+  {
+    title: '微信客服2',
+    description: '扫码添加客服',
+    value: '微信二维码',
+    icon: 'lucide:message-circle',
+    gradient: 'from-emerald-500 to-green-600',
+    link: '/contact',
+    qr: 'wx2.jpg',
   },
 ]
 

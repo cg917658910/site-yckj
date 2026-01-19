@@ -1,9 +1,8 @@
 <script setup>
 import { Icon } from '@iconify/vue'
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 import { contactInfo, contactMethods, faqList, officeDirections } from '../data/site'
-import wechatQr from '../assets/img/wx.jpg'
 
 const form = reactive({
   name: '',
@@ -18,6 +17,20 @@ const form = reactive({
 const submitting = ref(false)
 const activeFaq = ref(null)
 const showWechatModal = ref(false)
+const currentWechat = ref('微信客服1')
+const currentQr = computed(() => {
+  const target = contactMethods.find((item) => item.title === currentWechat.value)
+  return target ? new URL(`../assets/img/${target.qr}`, import.meta.url).href : ''
+})
+
+const topContactMethods = computed(() =>
+  contactMethods.filter((method) => method.title !== '邮件联系')
+)
+
+const handleWechatClick = (title) => {
+  currentWechat.value = title
+  showWechatModal.value = true
+}
 
 const handleSubmit = () => {
   submitting.value = true
@@ -57,42 +70,44 @@ const handleSubmit = () => {
             <span class="text-slate-700 font-medium">{{ contactInfo.phone }}</span>
           </a>
           <div class="flex items-center gap-3">
-            <Icon icon="lucide:mail" width="20" class="text-cyan-500" />
-            <span class="text-slate-700 font-medium">{{ contactInfo.email }}</span>
+            <Icon icon="mdi:wechat" width="20" class="text-cyan-500" />
+            <span class="text-slate-700 font-medium">{{ contactInfo.kefu1 }}</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20">
-      <div class="section-container">
-        <div class="text-center mb-16">
-          <h2 class="section-title mb-4">多种联系方式</h2>
-          <p class="text-slate-500 font-light">选择最适合您的方式与我们取得联系</p>
-        </div>
+    <section class="py-20" id="contact-methods" >
+      <div class="section-container" >
+          <div class="text-center mb-16">
+            <h2 class="section-title mb-4">多种联系方式</h2>
+            <p class="text-slate-500 font-light">选择最适合您的方式与我们取得联系</p>
+          </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article v-for="method in contactMethods" :key="method.title" class="contact-card glass glass-hover rounded-2xl p-8 text-center group">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article v-for="method in contactMethods" :key="method.title" class="contact-card glass glass-hover rounded-2xl p-8 text-center group">
             <div class="contact-icon w-16 h-16 mx-auto mb-4 rounded-2xl text-white flex items-center justify-center" :class="`bg-gradient-to-br ${method.gradient}`">
               <Icon :icon="method.icon" width="32" />
             </div>
             <h3 class="text-xl font-semibold text-slate-900 mb-2">{{ method.title }}</h3>
             <p class="text-sm text-slate-500 mb-4">{{ method.description }}</p>
-            <button
-              v-if="method.title === '微信客服'"
-              class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors"
-              @click="showWechatModal = true"
-            >
-              查看二维码
-              <Icon icon="lucide:qr-code" width="16" class="text-white/80" />
-            </button>
-            <a
-              v-else
-              :href="method.link"
-              class="text-indigo-600 font-medium hover:text-indigo-500 transition-colors"
-            >
-              {{ method.value }}
-            </a>
+            <template v-if="method.title.includes('微信客服')">
+              <button
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors"
+                @click="handleWechatClick(method.title)"
+              >
+                查看二维码
+                <Icon icon="lucide:qr-code" width="16" class="text-white/80" />
+              </button>
+            </template>
+            <template v-else>
+              <a
+                :href="method.link"
+                class="text-indigo-600 font-medium hover:text-indigo-500 transition-colors"
+              >
+                {{ method.value }}
+              </a>
+            </template>
           </article>
         </div>
       </div>
@@ -210,7 +225,7 @@ const handleSubmit = () => {
             <h3 class="text-xl font-semibold text-slate-900 mb-1">微信客服</h3>
             <p class="text-sm text-slate-500">长按识别或保存二维码添加客服</p>
           </div>
-          <img :src="wechatQr" alt="微信客服二维码" class="w-full rounded-xl border border-slate-200 object-cover" />
+          <img :src="currentQr" alt="微信客服二维码" class="w-full rounded-xl border border-slate-200 object-cover" />
           <div class="flex flex-col sm:flex-row gap-3">
             <button
               class="flex-1 px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors"
@@ -219,7 +234,7 @@ const handleSubmit = () => {
               关闭
             </button>
             <a
-              :href="wechatQr"
+              :href="currentQr"
               download="wechat-qr.jpg"
               class="flex-1 px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-colors flex items-center justify-center gap-2"
             >
