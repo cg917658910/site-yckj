@@ -44,7 +44,7 @@ const handleSubmit = () => {
 
 <template>
   <div>
-    <section id="contact-methods" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div class="absolute inset-0 bg-grid pointer-events-none"></div>
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-indigo-100/50 via-cyan-50/30 to-transparent opacity-100 blur-3xl pointer-events-none"></div>
 

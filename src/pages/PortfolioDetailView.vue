@@ -66,7 +66,14 @@ const moreCases = computed(() => caseStudies.filter((item) => item.slug !== curr
             </div>
 
             <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-slate-200 mb-12" :class="`bg-gradient-to-br ${currentCase.gradient}`">
-              <div class="absolute inset-0 flex items-center justify-center">
+              <img
+                v-if="currentCase.cover"
+                :src="currentCase.cover"
+                :alt="currentCase.title"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div v-else class="absolute inset-0 flex items-center justify-center">
                 <Icon :icon="currentCase.icon" width="120" class="text-white/20" />
               </div>
             </div>
@@ -138,8 +145,15 @@ const moreCases = computed(() => caseStudies.filter((item) => item.slug !== curr
             :key="item.slug"
             class="glass rounded-2xl overflow-hidden border border-slate-200/60"
           >
-            <div class="relative h-40" :class="`bg-gradient-to-br ${item.gradient}`">
-              <div class="absolute inset-0 flex items-center justify-center">
+            <div class="relative h-40">
+              <img
+                v-if="item.cover"
+                :src="item.cover"
+                :alt="item.title"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div v-else class="absolute inset-0 flex items-center justify-center" :class="`bg-gradient-to-br ${item.gradient}`">
                 <Icon :icon="item.icon" width="72" class="text-white/20" />
               </div>
             </div>

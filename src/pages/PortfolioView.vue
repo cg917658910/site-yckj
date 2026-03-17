@@ -78,20 +78,27 @@ const filteredCases = computed(() => {
             :key="item.slug"
             class="case-card glass glass-hover rounded-2xl overflow-hidden group flex flex-col"
           >
-            <div class="relative h-48 overflow-hidden" :class="`bg-gradient-to-br ${item.gradient}`">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Icon :icon="item.icon" class="text-white/30" width="84" />
+            <div class="relative">
+              <img
+                v-if="item.cover"
+                :src="item.cover"
+                :alt="item.title"
+                class="h-64 w-full object-cover"
+                loading="lazy"
+              />
+              <div v-else class="relative h-64 overflow-hidden" :class="`bg-gradient-to-br ${item.gradient}`">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <Icon :icon="item.icon" class="text-white/30" width="84" />
+                </div>
               </div>
-              <div class="absolute top-4 right-4">
-                <span class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">{{ item.badge }}</span>
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 text-xs font-medium bg-white/90 text-slate-900 rounded-full shadow">{{ item.badge }}</span>
               </div>
               <RouterLink
                 :to="`/portfolio/${item.slug}`"
-                class="case-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                class="absolute inset-0"
               >
-                <span class="px-4 py-2 bg-white text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors">
-                  查看详情
-                </span>
+                <span class="sr-only">查看 {{ item.title }}</span>
               </RouterLink>
             </div>
             <div class="p-6 flex flex-col h-full">
